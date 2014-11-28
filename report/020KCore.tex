@@ -1,0 +1,43 @@
+\begin{verbatim}
+#Task 8
+def gm_kcore(k):
+    degreeTableName = GM_NODE_DEGREES
+    tableName = GM_TABLE_UNDIRECT
+    #connect to an existing database
+    cur = db_conn.cursor()
+    cntBefore = -1
+    #loop deleting the edges
+    #showTable(cur, tableName)
+    while True:
+        #see the degree
+        cmd = "SELECT count(*) from {0}".format(tableName)
+        t = execute(cur, cmd)
+        cnt = t[0][0]
+        if cnt == cntBefore or cnt == 0:
+            print 'quit!'
+            break
+        else:
+            print cnt
+            cntBefore = cnt
+        gm_node_degrees(True)
+        #showTable(cur, degreeTableName)    
+        #a = getTableCount(cur, tableName)
+        tStr = "DROP VIEW IF EXISTS id;"
+        str = "{2} CREATE TEMP VIEW id AS SELECT node_id FROM
+             {0} WHERE in_degree < {1}".format(degreeTableName, k, tStr)
+        cmd = "{1}; DELETE FROM {0} WHERE src_id in (select * from id)
+             or dst_id in (select * from id);".format(tableName, str)
+        cur.execute(cmd)
+        #b = getTableCount(cur, tableName)
+        #print 'the edge deleted is {0}'.format(int(a) - int(b))
+        db_conn.commit()
+        #showTable(cur, tableName)
+        #showTable(cur, degreeTableName)
+    tmpNode = 'tmpNode'
+    gm_sql_table_drop_create(db_conn, tmpNode, "node_id integer")
+    cmd = "INSERT INTO {0} SELECT DISTINCT src_id FROM {1}".format(tmpNode, tableName)    
+    cur.execute(cmd)
+    getTableCount(cur, 'tmpNode')
+    db_conn.commit()
+    cur.close()
+\end{verbatim}

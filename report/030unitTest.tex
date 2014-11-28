@@ -1,0 +1,87 @@
+Because the k-core is basically implemented on undirected graphs. So we assume all the test cases to be undirected \\
+
+\subsection{Test case 1}
+\par 7 points, point 1-6 all connected with each other, while the point number 7 is a single point that have the only connection with the point 6 \\
+
+\par \textbf{Undirected edge:}
+\par (1,2), (1,3), (1,4), (1,5), (1,6), (2,3), (2,4), (2,5), (2,6), (3,4), (3,5), (3,6), (4,5), (4,6), (5,6), (6,7) \\
+
+edges in the database, notice that one undirected edge is counted as two directed edge, this accelerates the computation speed: \\
+\par \textbf{Directed edge:}      format (src index, dst index, weight)
+\par (1, 2, 1.0), (1, 3, 1.0), (1, 4, 1.0), (1, 5, 1.0), (1, 6, 1.0), (2, 3, 1.0), (2, 4, 1.0), (2, 5, 1.0), (2, 6, 1.0), (3, 4, 1.0), (3, 5, 1.0), (3, 6, 1.0), (4, 5, 1.0), (4, 6, 1.0), (5, 6, 1.0), (6, 7, 1.0), (2, 1, 1.0), (3, 1, 1.0), (4, 1, 1.0), (5, 1, 1.0), (6, 1, 1.0), (3, 2, 1.0), (4, 2, 1.0), (5, 2, 1.0), (6, 2, 1.0), (4, 3, 1.0), (5, 3, 1.0), (6, 3, 1.0), (5, 4, 1.0), (6, 4, 1.0), (6, 5, 1.0), (7, 6, 1.0) \\
+
+\par \textbf{Degree:}      format: (node index, in degree, out degree)
+\par (4, 5, 5), (1, 5, 5), (5, 5, 5), (3, 5, 5), (6, 6, 6), (2, 5, 5), (7, 1, 1) \\
+
+\par \textbf{Number of connected component before split:}
+\par 1\\
+\par \textbf{Number of connected component after split:}
+\par 1\\
+\par \textbf{Result of k-component:}
+\par Component 1: \{1, 2, 3, 4, 5, 6\}\\
+
+\subsection{Test case 2}
+\par This is 1-6 point, each point have a degree of five(means fully connection with other points), except that there is one edge missing between point 5 and point 6. basically test the time of iteration. \\
+
+\par \textbf{Undirected edge:}
+\par (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (2, 3), (2, 4), (2, 5), (2, 6), (3, 4), (3, 5), (3, 6), (4, 5), (4, 6) \\
+
+
+\par \textbf{Directed edge:}    format (src index, dst index, weight)
+\par (1, 2, 1.0), (1, 3, 1.0), (1, 4, 1.0), (1, 5, 1.0), (1, 6, 1.0), (2, 3, 1.0), (2, 4, 1.0), (2, 5, 1.0), (2, 6, 1.0), (3, 4, 1.0), (3, 5, 1.0), (3, 6, 1.0), (4, 5, 1.0), (4, 6, 1.0), (2, 1, 1.0), (3, 1, 1.0), (4, 1, 1.0), (5, 1, 1.0), (6, 1, 1.0), (3, 2, 1.0), (4, 2, 1.0), (5, 2, 1.0), (6, 2, 1.0), (4, 3, 1.0), (5, 3, 1.0), (6, 3, 1.0), (5, 4, 1.0), (6, 4, 1.0) \\
+
+\par \textbf{Degree:}   format: (node index, in degree, out degree)
+\par (4, 5, 5), (1, 5, 5), (5, 4, 4), (3, 5, 5), (6, 4, 4), (2, 5, 5) \\
+
+\par \textbf{Number of connected component before split:}
+\par 1\\
+\par \textbf{Number of connected component after split:}
+\par 0\\
+
+\par \textbf{Number of iteration:}
+\par 2 \\
+
+\subsection{Test case 3}
+\par This test could contain 12 points, which contains mainly 2 components(1-6, 7-12), with in each components, the degree of every node is five. only with point 6 connected with point 7. This test is to see that if we could get the right number of components. \\
+
+\par \textbf{Undirected edge:}
+\par (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (2, 3), (2, 4), (2, 5), (2, 6), (3, 4), (3, 5), (3, 6), (4, 5), (4, 6), (5, 6), (6, 7), (7, 8), (7, 9), (7, 10), (7, 11), (7, 12), (8, 9), (8, 10), (8, 11), (8, 12), (9, 10), (9, 11), (9, 12), (10, 11), (10, 12), (11, 12) \\
+
+\par \textbf{Directed edge:}   format (src index, dst index, weight)
+\par (1, 2, 1.0), (1, 3, 1.0), (1, 4, 1.0), (1, 5, 1.0), (1, 6, 1.0), (2, 3, 1.0), (2, 4, 1.0), (2, 5, 1.0), (2, 6, 1.0), (3, 4, 1.0), (3, 5, 1.0), (3, 6, 1.0), (4, 5, 1.0), (4, 6, 1.0), (5, 6, 1.0), (6, 7, 1.0), (7, 8, 1.0), (7, 9, 1.0), (7, 10, 1.0), (7, 11, 1.0), (7, 12, 1.0), (8, 9, 1.0), (8, 10, 1.0), (8, 11, 1.0), (8, 12, 1.0), (9, 10, 1.0), (9, 11, 1.0), (9, 12, 1.0), (10, 11, 1.0), (10, 12, 1.0), (11, 12, 1.0), (2, 1, 1.0), (3, 1, 1.0), (4, 1, 1.0), (5, 1, 1.0), (6, 1, 1.0), (3, 2, 1.0), (4, 2, 1.0), (5, 2, 1.0), (6, 2, 1.0), (4, 3, 1.0), (5, 3, 1.0), (6, 3, 1.0), (5, 4, 1.0), (6, 4, 1.0), (6, 5, 1.0), (7, 6, 1.0), (8, 7, 1.0), (9, 7, 1.0), (10, 7, 1.0), (11, 7, 1.0), (12, 7, 1.0), (9, 8, 1.0), (10, 8, 1.0), (11, 8, 1.0), (12, 8, 1.0), (10, 9, 1.0), (11, 9, 1.0), (12, 9, 1.0), (11, 10, 1.0), (12, 10, 1.0), (12, 11, 1.0) \\
+
+\par \textbf{Degree:}   format: (node index, in degree, out degree)
+\par (8, 5, 5), (4, 5, 5), (1, 5, 5), (5, 5, 5), (11, 5, 5), (3, 5, 5), (12, 5, 5), (10, 5, 5), (9, 5, 5), (6, 6, 6), (2, 5, 5), (7, 6, 6) \\
+
+\par \textbf{Number of connected component before split:}
+\par 1\\
+\par \textbf{Number of connected component after split:}
+\par 1\\
+
+\subsection{Test case 4}
+\par This test could contain 13 points, which contains mainly 2 components(1-6, 7-12), with in each components, the degree of every node is five. The number 13 point connect 2 components in edge(6,13,12,13). This test is to see that if we could get the right number of components.  \\
+
+\par \textbf{Undirected edge:}
+\par (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (2, 3), (2, 4), (2, 5), (2, 6), (3, 4), (3, 5), (3, 6), (4, 5), (4, 6), (5, 6), (6, 13), (7, 8), (7, 9), (7, 10), (7, 11), (7, 12), (8, 9), (8, 10), (8, 11), (8, 12), (9, 10), (9, 11), (9, 12), (10, 11), (10, 12), (11, 12), (12, 13) \\
+
+\par \textbf{Degree:}   format: (node index, in degree, out degree)
+\par (8, 5, 5), (4, 5, 5), (1, 5, 5), (13, 2, 2), (5, 5, 5), (11, 5, 5), (3, 5, 5), (12, 6, 6), (10, 5, 5), (9, 5, 5), (6, 6, 6), (2, 5, 5), (7, 5, 5) \\
+
+\par \textbf{Number of connected component before split:}
+\par 1\\
+\par \textbf{Number of connected component after split:}
+\par 2\\
+
+\subsection{Test case 5}
+\par This case contain only 1 edge, and 2 points. Is the test case that test edge condition. \\
+
+\par \textbf{Undirected edge:}
+\par (1, 2) \\
+
+\par \textbf{Degree:}    format: (node index, in degree, out degree)
+\par (1, 1, 1), (2, 1, 1) \\
+
+\par \textbf{Number of connected component before split:}
+\par 1\\
+\par \textbf{Number of connected component after split:}
+\par 0\\

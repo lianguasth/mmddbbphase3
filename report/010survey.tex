@@ -1,0 +1,83 @@
+\subsection{Papers read by Chengliang Lian}
+The first paper was the GBASE paper by U Kang et al.
+\cite{Kang:2012:GEA:2387332.2387347}
+\begin{itemize*}
+\item {\em Main idea}: 
+This paper proposed a efficient way to store, index and query graphs. The basic reasons to focus on this problem is because the precious value of conducting research on graphs like networks and the growing size of graph. The paper address graph mining in three aspects:  graph storage, graph search algorithm and query optimization. There are several features in this system which is very helpful. First, the system runs on distributed system based on hadoop model, which could be scaled out and in to fit in variant throughput and could support parallel query visit. Second, the system focus on both space and time saving. Several algorithms are presented as follows:
+
+\begin{itemize}
+\setlength\itemsep{-1.5mm}
+  \item Graph Compression. the graph could be first partitioned and then reshuffled to make similar regions into same blocks represented by adjacent blocks, and then each block could be compressed using Zip compression or Gap Elias-$\gamma$. Finally, the graph should be placed on Hadoop using grid placement.
+  \item Graph query is generalized to be matrix-vector model which could then be represented as SQL join form. 
+\end{itemize}
+
+\item {\em Shortcomings}:
+The paper does not show the performance of GBASE on nested queries, which might not be represented in matrix-vector model
+The paper does not give detail on block partition and didn't compare result of applying different block partition results. Applying different partition graphs might effect the result of compression and speed.
+The paper does not do the parameter optimization on grid placement method, which could be done in future.
+\end{itemize*}
+
+The second paper was the K-core Decomposition paper by JI Alvarez-Hamelin et al.
+\cite{DBLP:journals/corr/abs-cs-0504107}
+\begin{itemize*}
+\item {\em Main idea}: 
+This paper presents a method of data visualization based on k-core decomposition for 2-dimensional large scale complex networks. The k-core decomposition was a cost efficient method to analyze the pattern and hierarchal structure of networks. The time complexity of k-core decomposition is O(n+e), where n is the size of the network and e is the number of edges. k-core decomposition is to strip off the vertices on the map that has degree lower than k. This is realized based on the idea of bin-sort and bin-index.
+
+The paper then does experiments on simulated and real data sets. At last, it applies the visualization technology on the network feature analysis. Some features like number of clusters and hierarchy of the networks could be shown directly from the color, radius and layers of the graph. At last, the paper give some results between the computer generated networks on ER graph model and BA model, which shows a very intuitive result. The model also successfully represent and distinguish two very similar real world graph models, IR and IR\_CAIDA map.
+\item {\em Shortcomings}:
+The paper only gives the data visualization of two dimensional networks, which is to much space intense and sometimes too crowded. It might be convenient to convert the circle model to three dimensional graph, which might presents better user interaction. 
+The paper has provided us with a general visualization method to present features of networks. Future works could be done on analyzing and representing some specific topological graphs like human brain.
+\end{itemize*}
+
+The third paper was the HADI paper by U Kang et al.
+\cite{DBLP:journals/tkdd/KangTAFL11}
+\begin{itemize*}
+\item {\em Main idea}: 
+This paper presents an open-source package called HADI that is capable of approximating effective radius and diameter of very large scale graphs and used it to observe important patterns of large-scale realistic and synthetic datasets.
+
+There exists algorithm to compute exact effective radius and diameter but the space complexity is prohibitively high. This paper uses Flajolet-Martin algorithm to constitute an approximation algorithm since Flajolet-Martin algorithm has a tight space complexity bound and unbiased estimate. As for implementation, one naive version, one improved version and one further optimized version are implemented and examined. HADI-naive involves two stages of MAPREDUCE. HADI-plain improves the efficiency by directing only necessary input to each reducer so that both network traffic and reducer execution time improve. HADI-plain takes three major stages of MAPREDUCE and it enables the algorithm to handle much more data since inputs are evenly distributed on cluster of machines. It scales well given sufficient number of machines. HADI-optimized exploits block operations to decrease input size and thus the time spent in shuffling and sorting stage. Bit shuffle encoding strives to decrease the input size by compressing the bitstring. This paper also proposed a potential implementation of HADI in a RDBMS, the main idea is to define a user defined function to carry out BIT-OR operation of Flajolet-Martin bitstrings and iteratively executing a SQL statement to complete the algorithm.
+
+The experiment result of HADI on large datasets such as LinkedIn and YahooWeb shows that HADI-optimized has great scalability and achieves much better performance than HADI-plain. The results also shows that block operation and bit shuffle encoding performs differently on different types of graphs. However, when these two optimizations are both adopted, it performs very well. The paper also reports some important observations, such as a small effective diameter of the large YahooWeb graph and the multi-modal structure of the radius distribution of the web graph.
+
+\item {\em Shortcomings}:
+Edge clustering may be carried out in data preprocessing stage to further improve the efficiency of block operation, thus further optimize the run time of HADI.
+\end{itemize*}
+
+\subsection{Papers read by Rui Shen}
+
+The first paper was the PEGASUS paper by U Kang et al.
+\cite{Kang09}
+\begin{itemize*}
+\item {\em Main idea}: 
+This paper proposes PEGASUS, an open-source Graph Mining library which is able to perform typical graph mining tasks on Peta-Scale graph. This library is implemented on HADOOP platform and has a core primitive called Generalized Iterative Matrix-Vector multiplication (GIM-V). GIM-V is a generalization of normal matrix-vector multiplication, three operations needs to be defined to perform customized graph mining operations, such as PageRank, node proximity measurement, diameter estimation and connected components discovery. For connected components discovery, a new algorithm called HCC using the abstraction provided by GIM-V is proposed, and this algorithm is proved to have a maximum iteration number of the diameter of the graph.
+
+Various optimization was proposed for GIM-V, including block multiplication, clustered edges, the combination of the former two, diagonal block iteration and node renumbering. Block multiplication accelerates the algorithm by saving sorting time and input size. Clustered edges can further exploit the advantage by decreasing the number of blocks when it is used with block multiplication. Diagonal block iteration and node renumbering both accelerate the algorithm by decreasing the number of iteration. 
+
+GIM-V is then performed on synthetic Kronecker graphs to evaluate its performance. Among the first three optimizations, Block multiplication with clustered edges performs the best and it is observed that diagonal block iteration and node renumber can further improve its running time. GIM-V is performed on real worlds graphs such as LinkedIn and Wikipedia, where several observations were made and they agree with existing research results well.
+\item {\em Shortcomings}:
+Not really, PEGASUS can keep incorporating new tasks that conforms to GIM-V in the future.
+\end{itemize*}
+
+The second paper was the HEIGEN paper by U Kang et al.
+\cite{DBLP:conf/pakdd/KangMF11}
+\begin{itemize*}
+\item {\em Main idea}: 
+This paper proposes an eigensolver called HEIGEN for billion-scale, sparse symmetric matrices. This eigensolver overcomes limitation in scalability of existing eigensolvers. It is well optimized and is implemented on HADOOP platform to calculate top $k$ eigenvalues and eigenvectors, which can in turn be used to facilitate discovery of patterns in graphs, such as near-cliques and triangles. The paper reports several meaningful observations.
+
+The HEIGEN algorithm is based on a sequential algorithm called Lanczos-SO, which produces no spurious eigenvalues and consists of operations suitable for MAPREDUCE framework. Several optimizations were proposed to port it to parallelized computing. First, simple tasks are put on a single machine to avoid overhead incurred by MAPREDUCE. Second, adjacency matrix and corresponding operand is divided into blocks to decrease input size and key space, thus saving time for shuffling and sorting. Third, distributed cache functionality in HADOOP enables skewness of data to be exploited by specialized cache-based matrix-vector and matrix-matrix multiplication implementations, which are significantly faster than their counterparts.
+\item {\em Shortcomings}:
+Not really, the algorithm could be extended to apply on multi-dimensional matrices on the future.
+\end{itemize*}
+
+The third paper was the FaBP paper by U Kang et al.
+\cite{DBLP:conf/pkdd/KoutraKKCPF11}
+\begin{itemize*}
+\item {\em Main idea}: 
+This paper proposes Fast Belief Propagation algorithm as a new approach for guilt-by-association problem(label propagation problem in graphs). Four algorithms, including Random Walk with Restart, Semi-Supervised Learning, Belief Propagation and proposed algorithm were first shown to be similar linear systems. These linear systems can be solved using matrix inverse and multiplication operations. It is further shown that RWR and SSL can produce identical results on a regular graph with carefully picked parameters.
+
+In the model of FaBP, there is a "about-half" homophily factor, whose upper bound is the maximum between 1 norm and Frobenius norm of a derived matrix. The parameters of the linear system to be solved is calculated from this homophile factor. Convergence condition of FaBP and detailed steps are then given. 
+
+Experiments with DBLP dataset shows that FaBP and BP exhibits same classification on nodes when ran with the same parameters and that the convergence bound of FaBP is consistent with high-accuracy regions. Results also imply that the accuracy is insensitive to the magnitude of the prior belief and the homophily factor, as long as this factor conforms to the convergence bound. Scalability is significant given billion-scale graphs, this paper presents performance results of FaBP on YahooWeb and synthetic Kronecker datasets. FaBP and BP are implemented on HADOOP and the experiment result shows that FaBP is linear on the number of edges and is about twice as fast as BP.
+\item {\em Shortcomings}:
+A framework using FaBP as core algorithm can be developed to facilitate discovering temporal and topological node label changing pattern.
+\end{itemize*}

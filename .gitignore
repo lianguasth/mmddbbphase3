@@ -1,0 +1,10 @@
+FIG/
+BIB/
+*.pdf
+*.aux
+*.bbl
+*.blg
+*.log
+*.synctex.gz
+*.toc
+.DS_Store
