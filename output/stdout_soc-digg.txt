@@ -1,0 +1,189 @@
+Connected To Database
+Loaded data from /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/data/soc-digg.txt
+Computing Node degrees...
+Computing Degree distribution of the nodes...
+Computing PageRanks...
+Iteration = 1, Error = 0.009872
+Computing Weakly Connected Components...
+Error = 2238678.0811
+Error = 1269640.29877
+Error = 354916.177414
+Error = 110217.875406
+Error = 27111.3132843
+Error = 5433.59089369
+Error = 235.518576762
+Error = 5.38516480713
+Error = 0.0
+Component IDs has converged
+Number of Components = 373
+Computing Eigenvalues...
+Iteration No: 1
+Iteration No: 2
+Performing QR Algorithm. Max Iters=500, Stop threshold=0.01
+QR Algorithm Error = 0.000203528010543
+Iteration No: 3
+Performing QR Algorithm. Max Iters=500, Stop threshold=0.01
+QR Algorithm Error = 3.52380082116
+QR Algorithm Error = 3.45269225238
+QR Algorithm Error = 3.34901111107
+QR Algorithm Error = 3.21593360977
+QR Algorithm Error = 3.05960279766
+QR Algorithm Error = 2.88649888885
+QR Algorithm Error = 2.70287598951
+QR Algorithm Error = 2.51436576683
+QR Algorithm Error = 2.32574079528
+QR Algorithm Error = 2.14082140537
+QR Algorithm Error = 1.96249218206
+QR Algorithm Error = 1.79278973925
+QR Algorithm Error = 1.63302770744
+QR Algorithm Error = 1.48393320606
+QR Algorithm Error = 1.34577793184
+QR Algorithm Error = 1.21849448032
+QR Algorithm Error = 1.10177397671
+QR Algorithm Error = 0.995144609023
+QR Algorithm Error = 0.898032635308
+QR Algorithm Error = 0.809808341656
+QR Algorithm Error = 0.729819659133
+QR Algorithm Error = 0.657416002545
+QR Algorithm Error = 0.591964570868
+QR Algorithm Error = 0.532860969257
+QR Algorithm Error = 0.479535642736
+QR Algorithm Error = 0.431457283779
+QR Algorithm Error = 0.388134101293
+QR Algorithm Error = 0.349113617071
+QR Algorithm Error = 0.313981481835
+QR Algorithm Error = 0.282359669201
+QR Algorithm Error = 0.253904304692
+QR Algorithm Error = 0.22830331134
+QR Algorithm Error = 0.205273997553
+QR Algorithm Error = 0.18456067218
+QR Algorithm Error = 0.165932342202
+QR Algorithm Error = 0.149180527405
+QR Algorithm Error = 0.134117211495
+QR Algorithm Error = 0.120572938718
+QR Algorithm Error = 0.108395058012
+QR Algorithm Error = 0.0974461119387
+QR Algorithm Error = 0.0876023646797
+QR Algorithm Error = 0.0787524614848
+QR Algorithm Error = 0.070796211023
+QR Algorithm Error = 0.063643481637
+QR Algorithm Error = 0.0572132024861
+QR Algorithm Error = 0.0514324607946
+QR Algorithm Error = 0.0462356868124
+QR Algorithm Error = 0.0415639185835
+QR Algorithm Error = 0.0373641391571
+QR Algorithm Error = 0.0335886794249
+QR Algorithm Error = 0.030194680324
+QR Algorithm Error = 0.0271436086719
+QR Algorithm Error = 0.0244008214093
+QR Algorithm Error = 0.0219351735023
+QR Algorithm Error = 0.0197186651912
+QR Algorithm Error = 0.017726124688
+QR Algorithm Error = 0.0159349227929
+QR Algorithm Error = 0.0143247162438
+QR Algorithm Error = 0.012877216925
+QR Algorithm Error = 0.0115759843413
+QR Algorithm Error = 0.010406239023
+QR Algorithm Error = 0.00935469475719
+Performing QR Algorithm. Max Iters=500, Stop threshold=0.01
+QR Algorithm Error = 3.52380082116
+QR Algorithm Error = 3.45269225238
+QR Algorithm Error = 3.34901111107
+QR Algorithm Error = 3.21593360977
+QR Algorithm Error = 3.05960279766
+QR Algorithm Error = 2.88649888885
+QR Algorithm Error = 2.70287598951
+QR Algorithm Error = 2.51436576683
+QR Algorithm Error = 2.32574079528
+QR Algorithm Error = 2.14082140537
+QR Algorithm Error = 1.96249218206
+QR Algorithm Error = 1.79278973925
+QR Algorithm Error = 1.63302770744
+QR Algorithm Error = 1.48393320606
+QR Algorithm Error = 1.34577793184
+QR Algorithm Error = 1.21849448032
+QR Algorithm Error = 1.10177397671
+QR Algorithm Error = 0.995144609023
+QR Algorithm Error = 0.898032635308
+QR Algorithm Error = 0.809808341656
+QR Algorithm Error = 0.729819659133
+QR Algorithm Error = 0.657416002545
+QR Algorithm Error = 0.591964570868
+QR Algorithm Error = 0.532860969257
+QR Algorithm Error = 0.479535642736
+QR Algorithm Error = 0.431457283779
+QR Algorithm Error = 0.388134101293
+QR Algorithm Error = 0.349113617071
+QR Algorithm Error = 0.313981481835
+QR Algorithm Error = 0.282359669201
+QR Algorithm Error = 0.253904304692
+QR Algorithm Error = 0.22830331134
+QR Algorithm Error = 0.205273997553
+QR Algorithm Error = 0.18456067218
+QR Algorithm Error = 0.165932342202
+QR Algorithm Error = 0.149180527405
+QR Algorithm Error = 0.134117211495
+QR Algorithm Error = 0.120572938718
+QR Algorithm Error = 0.108395058012
+QR Algorithm Error = 0.0974461119387
+QR Algorithm Error = 0.0876023646797
+QR Algorithm Error = 0.0787524614848
+QR Algorithm Error = 0.070796211023
+QR Algorithm Error = 0.063643481637
+QR Algorithm Error = 0.0572132024861
+QR Algorithm Error = 0.0514324607946
+QR Algorithm Error = 0.0462356868124
+QR Algorithm Error = 0.0415639185835
+QR Algorithm Error = 0.0373641391571
+QR Algorithm Error = 0.0335886794249
+QR Algorithm Error = 0.030194680324
+QR Algorithm Error = 0.0271436086719
+QR Algorithm Error = 0.0244008214093
+QR Algorithm Error = 0.0219351735023
+QR Algorithm Error = 0.0197186651912
+QR Algorithm Error = 0.017726124688
+QR Algorithm Error = 0.0159349227929
+QR Algorithm Error = 0.0143247162438
+QR Algorithm Error = 0.012877216925
+QR Algorithm Error = 0.0115759843413
+QR Algorithm Error = 0.010406239023
+QR Algorithm Error = 0.00935469475719
+Getting EigenValues...
+Getting top 3 EigenVectors...
+Getting eigenvector 1
+Getting eigenvector 2
+Getting eigenvector 3
+EigenValues computed: 
+(1, 31.4782328745392)
+(2, -3.74281660170305)
+(3, 3.36460458134165)
+Computing the count of triangles...
+Number of Triangles = 5196.13029829
+Saving tables...
+Saved table GM_DEGREE_DISTRIBUTION to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soc-digg.txt/degreedist.csv
+Saved table GM_INDEGREE_DISTRIBUTION to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soc-digg.txt/indegreedist.csv
+Saved table GM_OUTDEGREE_DISTRIBUTION to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soc-digg.txt/outdegreedist.csv
+Saved table GM_NODE_DEGREES to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soc-digg.txt/degree.csv
+Saved table GM_PAGERANK to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soc-digg.txt/pagerank.csv
+Saved table GM_CON_COMP to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soc-digg.txt/conncomp.csv
+Saved table GM_BELIEF to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soc-digg.txt/belief.csv
+Saved table GM_EIG_VALUES to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soc-digg.txt/eigval.csv
+Saved table GM_EIG_VECTORS to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soc-digg.txt/eigvec.csv
+172808
+Computing Node degrees...
+49164
+Computing Node degrees...
+quit!
+the count of table should be :4886
+Computing Weakly Connected Components...
+Error = 796699.70343
+Error = 167701.786988
+Error = 17760.5671081
+Error = 944.533747412
+Error = 77.9871784334
+Error = 3.46410161514
+Error = 0.0
+Component IDs has converged
+Number of Components = 13
+Saved table GM_CON_COMP to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soc-digg.txt/conncomp-kcore.csv
+Disconnected From Database

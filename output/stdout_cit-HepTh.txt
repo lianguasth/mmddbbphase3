@@ -1,0 +1,92 @@
+Connected To Database
+Loaded data from /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/data/cit-HepTh.txt
+Computing Node degrees...
+Computing Degree distribution of the nodes...
+Computing PageRanks...
+Iteration = 1, Error = 0.011984
+Iteration = 2, Error = 0.005767
+Computing Weakly Connected Components...
+Error = 997739938.109
+Error = 698703462.46
+Error = 247469495.304
+Error = 87213277.6255
+Error = 42250434.9133
+Error = 18405000.5664
+Error = 223714.981646
+Error = 7378.47314829
+Error = 24.5967477525
+Error = 0.0
+Component IDs has converged
+Number of Components = 143
+Computing Eigenvalues...
+Iteration No: 1
+Iteration No: 2
+Performing QR Algorithm. Max Iters=500, Stop threshold=0.01
+QR Algorithm Error = 0.326313313379
+QR Algorithm Error = 0.0144777198613
+QR Algorithm Error = 0.00064233316617
+Iteration No: 3
+Performing QR Algorithm. Max Iters=500, Stop threshold=0.01
+QR Algorithm Error = 22.93662797
+QR Algorithm Error = 10.3872802925
+QR Algorithm Error = 4.64673057131
+QR Algorithm Error = 2.07293770556
+QR Algorithm Error = 0.924228279258
+QR Algorithm Error = 0.412024648829
+QR Algorithm Error = 0.183678103312
+QR Algorithm Error = 0.0818822249668
+QR Algorithm Error = 0.0365024066275
+QR Algorithm Error = 0.0162724627372
+QR Algorithm Error = 0.0072541253775
+Performing QR Algorithm. Max Iters=500, Stop threshold=0.01
+QR Algorithm Error = 22.93662797
+QR Algorithm Error = 10.3872802925
+QR Algorithm Error = 4.64673057131
+QR Algorithm Error = 2.07293770556
+QR Algorithm Error = 0.924228279258
+QR Algorithm Error = 0.412024648829
+QR Algorithm Error = 0.183678103312
+QR Algorithm Error = 0.0818822249668
+QR Algorithm Error = 0.0365024066275
+QR Algorithm Error = 0.0162724627372
+QR Algorithm Error = 0.0072541253775
+Getting EigenValues...
+Getting top 3 EigenVectors...
+Getting eigenvector 1
+Getting eigenvector 2
+Getting eigenvector 3
+EigenValues computed: 
+(1, 108.060268163825)
+(2, -48.1723471355928)
+(3, 9.08870148185095)
+Computing the count of triangles...
+Number of Triangles = 191797.550403
+Saving tables...
+Saved table GM_DEGREE_DISTRIBUTION to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_cit-HepTh.txt/degreedist.csv
+Saved table GM_INDEGREE_DISTRIBUTION to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_cit-HepTh.txt/indegreedist.csv
+Saved table GM_OUTDEGREE_DISTRIBUTION to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_cit-HepTh.txt/outdegreedist.csv
+Saved table GM_NODE_DEGREES to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_cit-HepTh.txt/degree.csv
+Saved table GM_PAGERANK to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_cit-HepTh.txt/pagerank.csv
+Saved table GM_CON_COMP to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_cit-HepTh.txt/conncomp.csv
+Saved table GM_BELIEF to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_cit-HepTh.txt/belief.csv
+Saved table GM_EIG_VALUES to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_cit-HepTh.txt/eigval.csv
+Saved table GM_EIG_VECTORS to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_cit-HepTh.txt/eigvec.csv
+705614
+Computing Node degrees...
+426878
+Computing Node degrees...
+quit!
+the count of table should be :12977
+Computing Weakly Connected Components...
+Error = 752158233.763
+Error = 476158814.312
+Error = 160861342.931
+Error = 53968862.2825
+Error = 18502556.4276
+Error = 8556.85917846
+Error = 98.3920728514
+Error = 0.0
+Component IDs has converged
+Number of Components = 16
+Saved table GM_CON_COMP to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_cit-HepTh.txt/conncomp-kcore.csv
+Disconnected From Database

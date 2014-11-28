@@ -1,0 +1,274 @@
+Connected To Database
+Loaded data from /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/data/soft-jdkdependency.txt
+Computing Node degrees...
+Computing Degree distribution of the nodes...
+Computing PageRanks...
+Iteration = 1, Error = 0.231238
+Iteration = 2, Error = 0.056897
+Iteration = 3, Error = 0.021014
+Iteration = 4, Error = 0.009825
+Computing Weakly Connected Components...
+Error = 291806.402219
+Error = 52371.0507628
+Error = 2510.12927954
+Error = 1684.00950116
+Error = 4.0
+Error = 0.0
+Component IDs has converged
+Number of Components = 1
+Computing Eigenvalues...
+Iteration No: 1
+Iteration No: 2
+Performing QR Algorithm. Max Iters=500, Stop threshold=0.01
+QR Algorithm Error = 100.643229767
+QR Algorithm Error = 91.1389689115
+QR Algorithm Error = 80.2274318426
+QR Algorithm Error = 69.0843624737
+QR Algorithm Error = 58.5229636696
+QR Algorithm Error = 48.9957736474
+QR Algorithm Error = 40.6817829072
+QR Algorithm Error = 33.5863256511
+QR Algorithm Error = 27.6206513681
+QR Algorithm Error = 22.6548358981
+QR Algorithm Error = 18.5488797685
+QR Algorithm Error = 15.1690351222
+QR Algorithm Error = 12.3951772171
+QR Algorithm Error = 10.1231764589
+QR Algorithm Error = 8.26469767449
+QR Algorithm Error = 6.74581690093
+QR Algorithm Error = 5.50520859215
+QR Algorithm Error = 4.49228693123
+QR Algorithm Error = 3.66548025854
+QR Algorithm Error = 2.99070861022
+QR Algorithm Error = 2.44007897307
+QR Algorithm Error = 1.99078665458
+QR Algorithm Error = 1.62420037345
+QR Algorithm Error = 1.3251057204
+QR Algorithm Error = 1.08108244239
+QR Algorithm Error = 0.881993417525
+QR Algorithm Error = 0.719566117329
+QR Algorithm Error = 0.587050265559
+QR Algorithm Error = 0.478938064504
+QR Algorithm Error = 0.390735685017
+QR Algorithm Error = 0.31877669837
+QR Algorithm Error = 0.260069790412
+QR Algorithm Error = 0.212174479529
+QR Algorithm Error = 0.17309970021
+QR Algorithm Error = 0.141221051533
+QR Algorithm Error = 0.115213278801
+QR Algorithm Error = 0.0939951859765
+QR Algorithm Error = 0.0766846912848
+QR Algorithm Error = 0.0625621588674
+QR Algorithm Error = 0.0510404828342
+QR Algorithm Error = 0.0416406804311
+QR Algorithm Error = 0.0339719798889
+QR Algorithm Error = 0.0277155752745
+QR Algorithm Error = 0.0226113730569
+QR Algorithm Error = 0.0184471794489
+QR Algorithm Error = 0.0150498790305
+QR Algorithm Error = 0.0122782379432
+QR Algorithm Error = 0.0100170324696
+QR Algorithm Error = 0.00817225891254
+Iteration No: 3
+Performing QR Algorithm. Max Iters=500, Stop threshold=0.01
+QR Algorithm Error = 127.907005011
+QR Algorithm Error = 122.174804211
+QR Algorithm Error = 115.266156094
+QR Algorithm Error = 107.557677151
+QR Algorithm Error = 99.4066717837
+QR Algorithm Error = 91.1232299844
+QR Algorithm Error = 82.9561989317
+QR Algorithm Error = 75.0906547152
+QR Algorithm Error = 67.6530955124
+QR Algorithm Error = 60.7206863151
+QR Algorithm Error = 54.3317585576
+QR Algorithm Error = 48.4958030353
+QR Algorithm Error = 43.2020630793
+QR Algorithm Error = 38.4264332239
+QR Algorithm Error = 34.1367178262
+QR Algorithm Error = 30.2964710492
+QR Algorithm Error = 26.8676923813
+QR Algorithm Error = 23.8126427041
+QR Algorithm Error = 21.0950091167
+QR Algorithm Error = 18.6806020453
+QR Algorithm Error = 16.5377256616
+QR Algorithm Error = 14.6373264384
+QR Algorithm Error = 12.9529957999
+QR Algorithm Error = 11.460880718
+QR Algorithm Error = 10.1395397011
+QR Algorithm Error = 8.96976969719
+QR Algorithm Error = 7.93442093351
+QR Algorithm Error = 7.01821073468
+QR Algorithm Error = 6.20754322324
+QR Algorithm Error = 5.49033897487
+QR Algorithm Error = 4.85587679741
+QR Algorithm Error = 4.29464854623
+QR Algorithm Error = 3.79822707902
+QR Algorithm Error = 3.35914694939
+QR Algorithm Error = 2.97079714362
+QR Algorithm Error = 2.62732500612
+QR Algorithm Error = 2.32355043417
+QR Algorithm Error = 2.05488941232
+QR Algorithm Error = 1.81728598661
+QR Algorithm Error = 1.60715182591
+QR Algorithm Error = 1.42131257968
+QR Algorithm Error = 1.25696030512
+QR Algorithm Error = 1.1116113033
+QR Algorithm Error = 0.983068767222
+QR Algorithm Error = 0.869389704972
+QR Algorithm Error = 0.768855657292
+QR Algorithm Error = 0.679946780199
+QR Algorithm Error = 0.601318910061
+QR Algorithm Error = 0.531783270703
+QR Algorithm Error = 0.470288520195
+QR Algorithm Error = 0.415904868883
+QR Algorithm Error = 0.367810030665
+QR Algorithm Error = 0.325276796529
+QR Algorithm Error = 0.287662043482
+QR Algorithm Error = 0.254397013371
+QR Algorithm Error = 0.224978715089
+QR Algorithm Error = 0.198962320501
+QR Algorithm Error = 0.175954439326
+QR Algorithm Error = 0.155607171458
+QR Algorithm Error = 0.137612846903
+QR Algorithm Error = 0.121699373856
+QR Algorithm Error = 0.10762612465
+QR Algorithm Error = 0.0951802973868
+QR Algorithm Error = 0.0841736982701
+QR Algorithm Error = 0.074439895999
+QR Algorithm Error = 0.065831705208
+QR Algorithm Error = 0.0582189609047
+QR Algorithm Error = 0.051486550266
+QR Algorithm Error = 0.0455326720235
+QR Algorithm Error = 0.0402672971353
+QR Algorithm Error = 0.0356108074559
+QR Algorithm Error = 0.0314927918321
+QR Algorithm Error = 0.027850981413
+QR Algorithm Error = 0.0246303080817
+QR Algorithm Error = 0.0217820717656
+QR Algorithm Error = 0.0192632040432
+QR Algorithm Error = 0.0170356169
+QR Algorithm Error = 0.0150656268006
+QR Algorithm Error = 0.0133234453545
+QR Algorithm Error = 0.0117827288862
+QR Algorithm Error = 0.010420180088
+QR Algorithm Error = 0.00921519574188
+Performing QR Algorithm. Max Iters=500, Stop threshold=0.01
+QR Algorithm Error = 127.907005011
+QR Algorithm Error = 122.174804211
+QR Algorithm Error = 115.266156094
+QR Algorithm Error = 107.557677151
+QR Algorithm Error = 99.4066717837
+QR Algorithm Error = 91.1232299844
+QR Algorithm Error = 82.9561989317
+QR Algorithm Error = 75.0906547152
+QR Algorithm Error = 67.6530955124
+QR Algorithm Error = 60.7206863151
+QR Algorithm Error = 54.3317585576
+QR Algorithm Error = 48.4958030353
+QR Algorithm Error = 43.2020630793
+QR Algorithm Error = 38.4264332239
+QR Algorithm Error = 34.1367178262
+QR Algorithm Error = 30.2964710492
+QR Algorithm Error = 26.8676923813
+QR Algorithm Error = 23.8126427041
+QR Algorithm Error = 21.0950091167
+QR Algorithm Error = 18.6806020453
+QR Algorithm Error = 16.5377256616
+QR Algorithm Error = 14.6373264384
+QR Algorithm Error = 12.9529957999
+QR Algorithm Error = 11.460880718
+QR Algorithm Error = 10.1395397011
+QR Algorithm Error = 8.96976969719
+QR Algorithm Error = 7.93442093351
+QR Algorithm Error = 7.01821073468
+QR Algorithm Error = 6.20754322324
+QR Algorithm Error = 5.49033897487
+QR Algorithm Error = 4.85587679741
+QR Algorithm Error = 4.29464854623
+QR Algorithm Error = 3.79822707902
+QR Algorithm Error = 3.35914694939
+QR Algorithm Error = 2.97079714362
+QR Algorithm Error = 2.62732500612
+QR Algorithm Error = 2.32355043417
+QR Algorithm Error = 2.05488941232
+QR Algorithm Error = 1.81728598661
+QR Algorithm Error = 1.60715182591
+QR Algorithm Error = 1.42131257968
+QR Algorithm Error = 1.25696030512
+QR Algorithm Error = 1.1116113033
+QR Algorithm Error = 0.983068767222
+QR Algorithm Error = 0.869389704972
+QR Algorithm Error = 0.768855657292
+QR Algorithm Error = 0.679946780199
+QR Algorithm Error = 0.601318910061
+QR Algorithm Error = 0.531783270703
+QR Algorithm Error = 0.470288520195
+QR Algorithm Error = 0.415904868883
+QR Algorithm Error = 0.367810030665
+QR Algorithm Error = 0.325276796529
+QR Algorithm Error = 0.287662043482
+QR Algorithm Error = 0.254397013371
+QR Algorithm Error = 0.224978715089
+QR Algorithm Error = 0.198962320501
+QR Algorithm Error = 0.175954439326
+QR Algorithm Error = 0.155607171458
+QR Algorithm Error = 0.137612846903
+QR Algorithm Error = 0.121699373856
+QR Algorithm Error = 0.10762612465
+QR Algorithm Error = 0.0951802973868
+QR Algorithm Error = 0.0841736982701
+QR Algorithm Error = 0.074439895999
+QR Algorithm Error = 0.065831705208
+QR Algorithm Error = 0.0582189609047
+QR Algorithm Error = 0.051486550266
+QR Algorithm Error = 0.0455326720235
+QR Algorithm Error = 0.0402672971353
+QR Algorithm Error = 0.0356108074559
+QR Algorithm Error = 0.0314927918321
+QR Algorithm Error = 0.027850981413
+QR Algorithm Error = 0.0246303080817
+QR Algorithm Error = 0.0217820717656
+QR Algorithm Error = 0.0192632040432
+QR Algorithm Error = 0.0170356169
+QR Algorithm Error = 0.0150656268006
+QR Algorithm Error = 0.0133234453545
+QR Algorithm Error = 0.0117827288862
+QR Algorithm Error = 0.010420180088
+QR Algorithm Error = 0.00921519574188
+Getting EigenValues...
+Getting top 3 EigenVectors...
+Getting eigenvector 1
+Getting eigenvector 2
+Getting eigenvector 3
+EigenValues computed: 
+(1, 143.263455347464)
+(2, -126.696541873929)
+(3, 2.36764618191112)
+Computing the count of triangles...
+Number of Triangles = 151112.938911
+Saving tables...
+Saved table GM_DEGREE_DISTRIBUTION to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soft-jdkdependency.txt/degreedist.csv
+Saved table GM_INDEGREE_DISTRIBUTION to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soft-jdkdependency.txt/indegreedist.csv
+Saved table GM_OUTDEGREE_DISTRIBUTION to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soft-jdkdependency.txt/outdegreedist.csv
+Saved table GM_NODE_DEGREES to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soft-jdkdependency.txt/degree.csv
+Saved table GM_PAGERANK to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soft-jdkdependency.txt/pagerank.csv
+Saved table GM_CON_COMP to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soft-jdkdependency.txt/conncomp.csv
+Saved table GM_BELIEF to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soft-jdkdependency.txt/belief.csv
+Saved table GM_EIG_VALUES to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soft-jdkdependency.txt/eigval.csv
+Saved table GM_EIG_VECTORS to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soft-jdkdependency.txt/eigvec.csv
+107784
+Computing Node degrees...
+13528
+Computing Node degrees...
+quit!
+the count of table should be :815
+Computing Weakly Connected Components...
+Error = 83018.8545753
+Error = 19688.5400932
+Error = 39.2810386828
+Error = 0.0
+Component IDs has converged
+Number of Components = 1
+Saved table GM_CON_COMP to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_soft-jdkdependency.txt/conncomp-kcore.csv
+Disconnected From Database

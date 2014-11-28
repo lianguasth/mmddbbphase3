@@ -1,0 +1,154 @@
+Connected To Database
+Loaded data from /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/data/text-spanishbook.txt
+Computing Node degrees...
+Computing Degree distribution of the nodes...
+Computing PageRanks...
+Iteration = 1, Error = 0.282856
+Iteration = 2, Error = 0.215281
+Iteration = 3, Error = 0.083191
+Iteration = 4, Error = 0.044025
+Iteration = 5, Error = 0.021354
+Iteration = 6, Error = 0.011283
+Iteration = 7, Error = 0.006100
+Computing Weakly Connected Components...
+Error = 820463.447182
+Error = 343.461788268
+Error = 43.6119249747
+Error = 97.9744864748
+Error = 7.87400787401
+Error = 0.0
+Component IDs has converged
+Number of Components = 1
+Computing Eigenvalues...
+Iteration No: 1
+Iteration No: 2
+Performing QR Algorithm. Max Iters=500, Stop threshold=0.01
+QR Algorithm Error = 61.2102645755
+QR Algorithm Error = 45.5416962359
+QR Algorithm Error = 31.8907659273
+QR Algorithm Error = 21.6675854408
+QR Algorithm Error = 14.5162640266
+QR Algorithm Error = 9.66384901389
+QR Algorithm Error = 6.4154172345
+QR Algorithm Error = 4.25364624433
+QR Algorithm Error = 2.81877947448
+QR Algorithm Error = 1.86748386849
+QR Algorithm Error = 1.23710618468
+QR Algorithm Error = 0.819477565113
+QR Algorithm Error = 0.542823161405
+QR Algorithm Error = 0.359563679048
+QR Algorithm Error = 0.23817247455
+QR Algorithm Error = 0.157763517203
+QR Algorithm Error = 0.104501197041
+QR Algorithm Error = 0.0692206714371
+QR Algorithm Error = 0.0458511557575
+QR Algorithm Error = 0.0303713949527
+QR Algorithm Error = 0.0201177394658
+QR Algorithm Error = 0.0133258099244
+QR Algorithm Error = 0.00882689675406
+Iteration No: 3
+Performing QR Algorithm. Max Iters=500, Stop threshold=0.01
+QR Algorithm Error = 96.1453988219
+QR Algorithm Error = 81.0238346378
+QR Algorithm Error = 64.9355124393
+QR Algorithm Error = 50.3752076087
+QR Algorithm Error = 38.3168424089
+QR Algorithm Error = 28.8130071144
+QR Algorithm Error = 21.5262261778
+QR Algorithm Error = 16.0240093353
+QR Algorithm Error = 11.9042067742
+QR Algorithm Error = 8.833791585
+QR Algorithm Error = 6.55130807537
+QR Algorithm Error = 4.85693934044
+QR Algorithm Error = 3.60011990247
+QR Algorithm Error = 2.66825352128
+QR Algorithm Error = 1.9774839128
+QR Algorithm Error = 1.46549892099
+QR Algorithm Error = 1.08605227354
+QR Algorithm Error = 0.804844417708
+QR Algorithm Error = 0.596445733205
+QR Algorithm Error = 0.442006569114
+QR Algorithm Error = 0.327556216431
+QR Algorithm Error = 0.242740701389
+QR Algorithm Error = 0.17988674284
+QR Algorithm Error = 0.133307813026
+QR Algorithm Error = 0.0987897732514
+QR Algorithm Error = 0.0732096516339
+QR Algorithm Error = 0.054253114372
+QR Algorithm Error = 0.040205086152
+QR Algorithm Error = 0.0297945832361
+QR Algorithm Error = 0.0220797234629
+QR Algorithm Error = 0.0163625106776
+QR Algorithm Error = 0.0121256842532
+QR Algorithm Error = 0.00898592039672
+Performing QR Algorithm. Max Iters=500, Stop threshold=0.01
+QR Algorithm Error = 96.1453988219
+QR Algorithm Error = 81.0238346378
+QR Algorithm Error = 64.9355124393
+QR Algorithm Error = 50.3752076087
+QR Algorithm Error = 38.3168424089
+QR Algorithm Error = 28.8130071144
+QR Algorithm Error = 21.5262261778
+QR Algorithm Error = 16.0240093353
+QR Algorithm Error = 11.9042067742
+QR Algorithm Error = 8.833791585
+QR Algorithm Error = 6.55130807537
+QR Algorithm Error = 4.85693934044
+QR Algorithm Error = 3.60011990247
+QR Algorithm Error = 2.66825352128
+QR Algorithm Error = 1.9774839128
+QR Algorithm Error = 1.46549892099
+QR Algorithm Error = 1.08605227354
+QR Algorithm Error = 0.804844417708
+QR Algorithm Error = 0.596445733205
+QR Algorithm Error = 0.442006569114
+QR Algorithm Error = 0.327556216431
+QR Algorithm Error = 0.242740701389
+QR Algorithm Error = 0.17988674284
+QR Algorithm Error = 0.133307813026
+QR Algorithm Error = 0.0987897732514
+QR Algorithm Error = 0.0732096516339
+QR Algorithm Error = 0.054253114372
+QR Algorithm Error = 0.040205086152
+QR Algorithm Error = 0.0297945832361
+QR Algorithm Error = 0.0220797234629
+QR Algorithm Error = 0.0163625106776
+QR Algorithm Error = 0.0121256842532
+QR Algorithm Error = 0.00898592039672
+Getting EigenValues...
+Getting top 3 EigenVectors...
+Getting eigenvector 1
+Getting eigenvector 2
+Getting eigenvector 3
+EigenValues computed: 
+(1, 124.743849853994)
+(2, -92.4433028782972)
+(3, 7.69098536824097)
+Computing the count of triangles...
+Number of Triangles = 191933.134794
+Saving tables...
+Saved table GM_DEGREE_DISTRIBUTION to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_text-spanishbook.txt/degreedist.csv
+Saved table GM_INDEGREE_DISTRIBUTION to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_text-spanishbook.txt/indegreedist.csv
+Saved table GM_OUTDEGREE_DISTRIBUTION to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_text-spanishbook.txt/outdegreedist.csv
+Saved table GM_NODE_DEGREES to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_text-spanishbook.txt/degree.csv
+Saved table GM_PAGERANK to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_text-spanishbook.txt/pagerank.csv
+Saved table GM_CON_COMP to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_text-spanishbook.txt/conncomp.csv
+Saved table GM_BELIEF to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_text-spanishbook.txt/belief.csv
+Saved table GM_EIG_VALUES to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_text-spanishbook.txt/eigval.csv
+Saved table GM_EIG_VECTORS to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_text-spanishbook.txt/eigvec.csv
+114906
+Computing Node degrees...
+45518
+Computing Node degrees...
+quit!
+the count of table should be :1491
+Computing Weakly Connected Components...
+Error = 147828.523442
+Error = 182.493835512
+Error = 18.4932420089
+Error = 33.5410196625
+Error = 0.0
+Component IDs has converged
+Number of Components = 1
+Saved table GM_CON_COMP to /afs/andrew.cmu.edu/usr17/ruis/15826Project1/phase1/graphminer/output_text-spanishbook.txt/conncomp-kcore.csv
+Disconnected From Database
