@@ -4,7 +4,19 @@ import sys
 import collections as co
 import numpy
 import matplotlib.pyplot as plt
+import pandas as pd
 
+dMap = ['cit-HepPh.txt', 'cit-HepTh.txt', 'p2p-Gnutella31.txt', 'ca-AstroPh.txt',\
+ 'email-EuAll.txt', 'soc-Slashdot0811-75000.txt', 'cit-Cora.txt', 'soc-digg.txt', \
+ 'soc-flickr-75000.txt', 'soc-pokec-75000.txt','soft-jdkdependency.txt',\
+ 'text-spanishbook.txt']
+
+def isDirected(name):
+	#print name
+ 	for ss in dMap:
+ 		if ss in name:
+ 			return True
+ 	return False
 
 def plotDegree(dirs, path1, path2, plt, fig, ax):
 	ox = 1
@@ -37,6 +49,77 @@ def plotDegree(dirs, path1, path2, plt, fig, ax):
 		else:
 			ox = ox + 1
 		ff.close()
+
+
+def plotIndeg(dirs, path1, path2, plt, fig, ax):
+	ox = 1
+	oy = 1
+	for thisDir in dirs:
+		if not isDirected(thisDir):
+			continue
+		lists = {}
+		x = []
+		y = []
+		#print join(path1, thisDir, path2)
+		ff = open(join(path1, thisDir, path2))
+		#name of the png
+		fileName = path2
+		for line in ff.readlines():
+			line = line.strip()
+			words = line.split(",")
+			if len(words) == 2:
+				lists[float(words[0])] = float(words[1])
+			#print lists[float(words(0))]
+		#sort the key
+		od = co.OrderedDict(sorted(lists.items()))
+		for key in od:
+			x.append(key)
+			y.append(lists[key])
+		#print x
+		#print y
+		renderScatter(x, y, 'IndDegree distribution', 'indegree', 'Count', thisDir[7:-4], ox-1, oy-1, plt, fig, ax)
+		if ox == 3:
+			ox = 1
+			oy = oy + 1
+		else:
+			ox = ox + 1
+		ff.close()
+
+
+def plotOutdeg(dirs, path1, path2, plt, fig, ax):
+	ox = 1
+	oy = 1
+	for thisDir in dirs:
+		if not isDirected(thisDir):
+			continue
+		lists = {}
+		x = []
+		y = []
+		#print join(path1, thisDir, path2)
+		ff = open(join(path1, thisDir, path2))
+		#name of the png
+		fileName = path2
+		for line in ff.readlines():
+			line = line.strip()
+			words = line.split(",")
+			if len(words) == 2:
+				lists[float(words[0])] = float(words[1])
+			#print lists[float(words(0))]
+		#sort the key
+		od = co.OrderedDict(sorted(lists.items()))
+		for key in od:
+			x.append(key)
+			y.append(lists[key])
+		#print x
+		#print y
+		renderScatter(x, y, 'Outdegree distribution', 'OutDegree', 'Count', thisDir[7:-4], ox-1, oy-1, plt, fig, ax)
+		if ox == 3:
+			ox = 1
+			oy = oy + 1
+		else:
+			ox = ox + 1
+		ff.close()
+
 
 def plotComp(dirs, path1, path2, plt, fig, ax):
 	ox = 1
@@ -90,6 +173,41 @@ def plotPagerank(dirs, path1, path2, plt, fig, ax):
 		else:
 			ox = ox + 1
 		ff.close()	
+
+
+#draw out eigen value
+def plotEigen(dirs, path1, path2, plt, fig, ax):
+	ox = 1
+	oy = 1
+	for thisDir in dirs:
+		x = []
+		y = []
+		t = []
+		print join(path1, thisDir, path2)
+		ff = open(join(path1, thisDir, path2))
+		#name of the png
+		fileName = path2
+		for line in ff.readlines():
+			line = line.strip()
+			words = line.split(",")
+			if(len(words) > 2):
+				x.append(float(words[0]))
+				y.append(float(words[1]))
+		#for i in range(len(t)):
+		#	for j in range(len(t)):
+		#		x.append(t[i])
+		#		y.append(t[j])
+		#print x
+		#print y
+		renderScatter(x, y, 'eigenVector', 'eigenVector', 'pair', thisDir[7:-4], ox-1, oy-1, plt, fig, ax, False)
+		if ox == 5:
+			ox = 1
+			oy = oy + 1
+		else:
+			ox = ox + 1
+		ff.close()
+
+
 
 #return a lists of component number \t size
 def mergeFile(fil):
@@ -167,10 +285,43 @@ def renderScatter(x, y, title, xlabel, ylabel, fileName, subX, subY, plt, fig, a
 #	fig.show()
 #	fig.savefig(fileName, dpi=200)
 
+def plotTri(targetDir, plt, fig, axx):
+	x = []
+	qq = []
+	fs = [ f for f in listdir(targetDir) if isfile(join(sys.argv[1],f)) ]
+	for f in fs:
+		ff = open(join(targetDir,f))
+		for line in ff.readlines():
+			if "Triangle" in line:
+				qq.append(f)
+				words = line.split("=")
+				x.append(float(words[1].strip()))
+		ff.close()
+	print x
+	#ax.hist(x)
+	#t = [i for i in range(len(x))]
+	#ax.plot(t, x)
+	data = pd.Series(x,index=qq)
+	data.plot(kind='barh', ax=axx, fontsize=4)
+	ax.set_title("Triangle Count Histogram")
+	ax.set_xlabel("Triangle")
+	ax.set_ylabel("Count")
+	#plt.show()
+	#raw_input()
+
+
 fig, ax = plt.subplots(5, 4)
 fig.tight_layout()
 dirs = [ f for f in listdir(sys.argv[1]) if not isfile(join(sys.argv[1],f)) ]
-if "degree" in sys.argv[2]:
+if "indegree" in sys.argv[2]:
+	fig, ax = plt.subplots(3, 4)
+	fig.tight_layout()
+	plotIndeg(dirs, sys.argv[1], sys.argv[2], plt, fig, ax)
+elif "outdegree" in sys.argv[2]:
+	fig, ax = plt.subplots(3, 4)
+	fig.tight_layout()
+	plotOutdeg(dirs, sys.argv[1], sys.argv[2], plt, fig, ax)
+elif "degree" in sys.argv[2]:
 	plotDegree(dirs, sys.argv[1], sys.argv[2], plt, fig, ax)
 elif "kcore" in sys.argv[2]:
 	plotComp(dirs, sys.argv[1], sys.argv[2], plt, fig, ax)
@@ -178,6 +329,11 @@ elif "pagerank" in  sys.argv[2]:
 	plotPagerank(dirs, sys.argv[1], sys.argv[2], plt, fig, ax)
 elif "conncomp" in sys.argv[2]:
 	plotComp(dirs, sys.argv[1], sys.argv[2], plt, fig, ax)
+elif "triangle" in sys.argv[2]:
+	fig,ax = plt.subplots(1, 1)
+	plotTri(sys.argv[1], plt, fig, ax)
+elif "eigvec" in sys.argv[2]:
+	plotEigen(dirs, sys.argv[1], sys.argv[2], plt, fig, ax)
 
 
 #plt.show()
