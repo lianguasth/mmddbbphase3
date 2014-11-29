@@ -22,23 +22,21 @@ function main(){
 
 function plot(){
 #draw kcore
-#IFS='/' read -ra ADDR <<< "$1"
-#IFS='.' read -ra ADDRR <<< "${ADDR[1]}"
-#NAME="${ADDRR[0]}"
-#echo $1
-#cat $1/conncomp-kcore.csv | python lib/plotCommponent.py pic/plotKcore$NAME.png true
-python ./lib/plotAll.py ./output/ conncomp-kcore.csv
+#python ./lib/plotAll.py ./output/ conncomp-kcore.csv
 #draw component
-#cat $1/conncomp.csv | python lib/plotCommponent.py pic/plotConncomp$NAME.png true
-python ./lib/plotAll.py ./output/ conncomp.csv
+#python ./lib/plotAll.py ./output/ conncomp.csv
 #draw degree
-#cat $1/degreedist.csv | python lib/plotDegree.py pic/DegreeDist$NAME.png true
-python ./lib/plotAll.py ./output/ degreedist.csv
-#draw radius 
-#cat $1/radius.csv | python lib/plotRadius.py pic/Radius$NAME.png true
+#python ./lib/plotAll.py ./output/ degreedist.csv
 #draw pagerank
-#cat $1/pagerank.csv | python lib/plotPagerank.py pic/pageRank$NAME.png false
-python ./lib/plotAll.py ./output/ pagerank.csv
+#python ./lib/plotAll.py ./output/ pagerank.csv
+#draw indegree
+#python ./lib/plotAll.py ./output/ indegreedist.csv
+#draw outdegree
+#python ./lib/plotAll.py ./output/ outdegreedist.csv
+#draw triangle count
+#python ./lib/plotAll.py res triangle
+#draw eigen vector
+python ./lib/plotAll.py ./output/ eigvec.csv
 }
 
 main $1
