@@ -1,2 +1,7 @@
-add this to your all makefile
-./plot.sh output
+＃add this to your all makefile
+for phase 1, you should add this to your make file
+python iterateOverDir.py output/ 1
+＃for phase 2, you should add this to your make file
+python iterateOverDir.py output/ 2
+＃for phase 3, you should add this to your make file
+./plotPhase3.sh output
