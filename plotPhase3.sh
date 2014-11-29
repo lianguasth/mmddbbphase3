@@ -22,19 +22,19 @@ function main(){
 
 function plot(){
 #draw kcore
-#python ./lib/plotAll.py ./output/ conncomp-kcore.csv
+python ./lib/plotAll.py ./output/ conncomp-kcore.csv
 #draw component
-#python ./lib/plotAll.py ./output/ conncomp.csv
+python ./lib/plotAll.py ./output/ conncomp.csv
 #draw degree
-#python ./lib/plotAll.py ./output/ degreedist.csv
+python ./lib/plotAll.py ./output/ degreedist.csv
 #draw pagerank
-#python ./lib/plotAll.py ./output/ pagerank.csv
+python ./lib/plotAll.py ./output/ pagerank.csv
 #draw indegree
-#python ./lib/plotAll.py ./output/ indegreedist.csv
+python ./lib/plotAll.py ./output/ indegreedist.csv
 #draw outdegree
-#python ./lib/plotAll.py ./output/ outdegreedist.csv
+python ./lib/plotAll.py ./output/ outdegreedist.csv
 #draw triangle count
-#python ./lib/plotAll.py res triangle
+python ./lib/plotAll.py res triangle
 #draw eigen vector
 python ./lib/plotAll.py ./output/ eigvec.csv
 }
