@@ -11,23 +11,26 @@ DFILESP3 = cit-HepPh.txt cit-HepTh.txt p2p-Gnutella31.txt ca-AstroPh.txt email-E
 unittest:
 	chmod a+rwx `pwd`
 	for file in $(UNITTESTFILE); do \
-	mkdir output_$$file && \
-	python gm_kcore.py --file `pwd`/data/$$file --dest_dir `pwd`/output_$$file --unweighted --undirected >> stdout_$$file; done
+		mkdir output_$$file && \
+		python gm_kcore.py --file `pwd`/data/$$file --dest_dir `pwd`/output_$$file --unweighted --undirected >> stdout_$$file && \
+		sort -k1 -n `pwd`/output_$$file/conncomp-kcore.csv >> `pwd`/output_$$file/conncomp-kcore-sorted.csv && \
+		diff `pwd`/output_$$file/conncomp-kcore-sorted.csv `pwd`/data/ans_$$file; done
+	@echo 'Unit test passed'
 
 gm1:
 	chmod a+rwx `pwd`
 	for file in $(DFILESP1); do \
-	mkdir output_$$file && \
-	python gm_main_p1.py --file `pwd`/data/$$file --dest_dir `pwd`/output_$$file --unweighted >> stdout_$$file; done
+		mkdir output_$$file && \
+		python gm_main_p1.py --file `pwd`/data/$$file --dest_dir `pwd`/output_$$file --unweighted >> stdout_$$file; done
 
 gm2:
 	chmod a+rwx `pwd`
 	for file in $(UFILESP2); do \
-	mkdir output_$$file && \
-	python gm_main_p2.py --file `pwd`/data/$$file --dest_dir `pwd`/output_$$file --unweighted --undirected >> stdout_$$file; done
+		mkdir output_$$file && \
+		python gm_main_p2.py --file `pwd`/data/$$file --dest_dir `pwd`/output_$$file --unweighted --undirected >> stdout_$$file; done
 	for file in $(DFILESP2); do \
-	mkdir output_$$file && \
-	python gm_main_p2.py --file `pwd`/data/$$file --dest_dir `pwd`/output_$$file --unweighted >> stdout_$$file; done
+		mkdir output_$$file && \
+		python gm_main_p2.py --file `pwd`/data/$$file --dest_dir `pwd`/output_$$file --unweighted >> stdout_$$file; done
 
 gm3:
 	chmod a+rwx `pwd`
