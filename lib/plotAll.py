@@ -35,7 +35,7 @@ def calDegreeStat(degree, count):
 
 def calStatComp(comp, count):
 	if not comp:
-		return None 
+		return None
 	size = sum(count)
 	mcomp = max(comp)
 	res = "compSize %d\nmaxComp%d\n"\
@@ -211,7 +211,7 @@ def plotPagerank(dirs, path1, path2, plt, fig, ax):
 			oy = oy + 1
 		else:
 			ox = ox + 1
-		ff.close()	
+		ff.close()
 
 
 def calCorr(x , y):
@@ -258,7 +258,7 @@ def plotEigen(dirs, path1, path2, plt, fig, ax):
 			#raw_input()
 			for j in range(i+1, len(vectors)):
 				xj = vectors[j]
-				#print xj 
+				#print xj
 				#raw_input()
 				total = calCorr(xi, xj)
 				#print numpy.corrcoef(xi,xj)
@@ -379,7 +379,7 @@ def plotTri(targetDir, plt, fig, axx):
 		ff = open(join(targetDir,f))
 		for line in ff.readlines():
 			if "Triangle" in line:
-				qq.append(f)
+				qq.append(f[16:])
 				words = line.split("=")
 				x.append(float(words[1].strip()))
 		ff.close()
