@@ -807,22 +807,23 @@ def gm_kcore(k):
 		t = execute(cur, cmd)
 		cnt = t[0][0]
 		if cnt == cntBefore or cnt == 0:
+			#if cnt == 0:
+			#	print 'haha!'
 			print 'quit!'
 			break
 		else:
 			print cnt
 			cntBefore = cnt
+		a = getTableCount(cur, tableName)
 		gm_node_degrees(True)
-		
-		#a = getTableCount(cur, tableName)
 		tStr = "DROP VIEW IF EXISTS id;"
-            	str = "{2} CREATE TEMP VIEW id AS SELECT node_id FROM {0} WHERE in_degree < {1}".format(degreeTableName, k, tStr)
-            	cmd = "{1}; DELETE FROM {0} WHERE src_id in (select * from id) or dst_id in (select * from id);".format(tableName, str)
+            	stra = "{2} CREATE TEMP VIEW id AS SELECT node_id FROM {0} WHERE in_degree < {1}".format(degreeTableName, k, tStr)
+            	cmd = "{1}; DELETE FROM {0} WHERE src_id in (select * from id) or dst_id in (select * from id);".format(tableName, stra)
             	cur.execute(cmd)
-		#b = getTableCount(cur, tableName)
-		#print 'the edge deleted is {0}'.format(int(a) - int(b))
+		b = getTableCount(cur, tableName)
+		print 'the edge deleted is {0}'.format(int(a) - int(b))
 		db_conn.commit()
-		#showTable(cur, tableName)
+		showTable(cur, tableName)
 		#showTable(cur, degreeTableName)
 	tmpNode = 'tmpNode'
 	gm_sql_table_drop_create(db_conn, tmpNode, "node_id integer")
@@ -831,7 +832,6 @@ def gm_kcore(k):
 	getTableCount(cur, 'tmpNode')
 	db_conn.commit()
 	cur.close()
-
 
 # Innovative Task : Anomaly Detection for unidrected graphs
 def gm_anomaly_detection():
@@ -933,15 +933,19 @@ def main():
         #    gm_belief_propagation(args.belief_file, args.delimiter, args.undirected)
         
         
-        gm_eigen_triangle_count()
+        #gm_eigen_triangle_count()
         #gm_naive_triangle_count()
 
         # Save tables to disk
         gm_save_tables(args.dest_dir, args.belief_file)
         #gm_anomaly_detection()
-
+	#task kcore
+	TMP_TABLE_NAME = GM_TABLE
+	GM_TABLE = GM_TABLE_UNDIRECT
         gm_kcore(5)
-        gm_connected_components(num_nodes, 'tmpNode')                      # Connected components
+        GM_TABLE = TMP_TABLE_NAME
+	#change kcore to directed after kcore
+	gm_connected_components(num_nodes, 'tmpNode')                      # Connected components
         gm_sql_save_table_to_file(db_conn, GM_CON_COMP, "node_id, component_id", os.path.join(args.dest_dir,"conncomp-kcore.csv"), ",");                               
                      
         gm_db_bubye(db_conn)
