@@ -218,7 +218,7 @@ def calCorr(x , y):
 	total = 0
 	xx = []
 	yy = []
-	for tid in x.keys():
+	for tid in range(len(x)):
 		xx.append(numpy.abs(x[tid]))
 		yy.append(numpy.abs(y[tid]))
 	return numpy.abs(numpy.corrcoef(xx, yy)[0][1])
@@ -287,6 +287,62 @@ def plotEigen(dirs, path1, path2, plt, fig, ax):
 		ff.close()
 
 
+#draw out eigen value using 4 vector
+def plotEigenRev(dirs, path1, path2, plt, fig, ax):
+	ox = 1
+	oy = 1
+	for thisDir in dirs:
+		vectors = []
+		vt = -1;
+		print join(path1, thisDir, path2)
+		ff = open(join(path1, thisDir, path2))
+		#name of the png
+		fileName = path2
+		for line in ff.readlines():
+			line = line.strip()
+			words = line.split(",")
+			if len(words) == 3:
+				tid = words[0];
+				tcol = int(words[1])
+				tval = float(words[2])
+				vectors.append(tval)
+		num = int(len(vectors)/4)
+		vectorR = []
+		for i in range(4):
+			t = []
+			for j in range(num):
+				t.append(vectors[i*num + j])
+			vectorR.append(t)
+		minTotal = 100000000
+		#print len(vectors)
+		for i in range(0,3):
+			xi = vectorR[i]
+			#print xi
+			#raw_input()
+			for j in range(i+1, 4):
+				xj = vectorR[j]
+				#print xj 
+				#raw_input()
+				total = calCorr(xi, xj)
+				#print numpy.corrcoef(xi,xj)
+				#total = numpy.corrcoef(xi,xj)[0][1]
+				#print total
+				if total < minTotal:
+					minTotal = total
+					mx = xi
+					my = xj
+		#for the test
+		#mx = vectors[1]
+		#my = vectors[2]
+		renderScatter(mx, my, 'eigenVector', 'eigenVector', 'pair', \
+			thisDir[7:-4], ox-1, oy-1, plt, fig, ax, False, False)
+		if ox == 5:
+			ox = 1
+			oy = oy + 1
+		else:
+			ox = ox + 1
+		ff.close()
+
 
 #return a lists of component number \t size
 def mergeFile(fil):
@@ -350,6 +406,9 @@ def renderScatter(x, y, title, xlabel, ylabel, fileName, subX,\
 	if logScale:
 		ax[subX, subY].set_xscale("log")
 		ax[subX, subY].set_yscale("log")
+	else:
+		ax[subX, subY].tick_params(axis='x', labelsize=4)
+		ax[subX, subY].tick_params(axis='y', labelsize=8)
 	#ax[subX, subY].yaxis.tick_right()
 	#ax.set_xticks(numpy.arange(0,1,0.1))
 	if setFlag:
@@ -419,7 +478,7 @@ elif "triangle" in sys.argv[2]:
 	fig,ax = plt.subplots(1, 1)
 	plotTri(sys.argv[1], plt, fig, ax)
 elif "eigvec" in sys.argv[2]:
-	plotEigen(dirs, sys.argv[1], sys.argv[2], plt, fig, ax)
+	plotEigenRev(dirs, sys.argv[1], sys.argv[2], plt, fig, ax)
 
 
 #plt.show()
