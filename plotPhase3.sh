@@ -36,7 +36,7 @@ python ./lib/plotAll.py ./output/ outdegreedist.csv
 #draw triangle count
 python ./lib/plotAll.py res triangle
 #draw eigen vector
-python ./lib/plotAll.py ./output/ eigvec.csv
+#python ./lib/plotAll.py ./output/ eigvec.csv
 }
 
 main $1
