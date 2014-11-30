@@ -12,7 +12,7 @@ unittest:
 	chmod a+rwx `pwd`
 	for file in $(UNITTESTFILE); do \
 		mkdir output_$$file && \
-		python gm_kcore.py --file `pwd`/data/$$file --dest_dir `pwd`/output_$$file --unweighted --undirected >> stdout_$$file && \
+		python gm_kcore.py --file `pwd`/data/$$file --dest_dir `pwd`/output_$$file --unweighted >> stdout_$$file && \
 		sort -k1 -n `pwd`/output_$$file/conncomp-kcore.csv >> `pwd`/output_$$file/conncomp-kcore-sorted.csv && \
 		diff `pwd`/output_$$file/conncomp-kcore-sorted.csv `pwd`/data/ans_$$file; done
 	@echo 'Unit test passed'
