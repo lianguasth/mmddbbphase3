@@ -12,7 +12,7 @@ do
 		cat "${1}/${file}" | grep 'Number of Triangles' > res/triCount_$NAME
 	fi
 done
-plot
+plot $1
 }
 
 function main(){
@@ -22,21 +22,21 @@ function main(){
 
 function plot(){
 #draw kcore
-python ./lib/plotAll.py ./output/ conncomp-kcore.csv
+python ./lib/plotAll.py $1 conncomp-kcore.csv
 #draw component
-python ./lib/plotAll.py ./output/ conncomp.csv
+python ./lib/plotAll.py $1 conncomp.csv
 #draw degree
-python ./lib/plotAll.py ./output/ degreedist.csv
+python ./lib/plotAll.py $1 degreedist.csv
 #draw pagerank
-python ./lib/plotAll.py ./output/ pagerank.csv
+python ./lib/plotAll.py $1 pagerank.csv
 #draw indegree
-python ./lib/plotAll.py ./output/ indegreedist.csv
+python ./lib/plotAll.py $1 indegreedist.csv
 #draw outdegree
-python ./lib/plotAll.py ./output/ outdegreedist.csv
+python ./lib/plotAll.py $1 outdegreedist.csv
 #draw triangle count
 python ./lib/plotAll.py res triangle
 #draw eigen vector
-#python ./lib/plotAll.py ./output/ eigvec.csv
+python ./lib/plotAll.py $1 eigvec.csv
 }
 
 main $1
