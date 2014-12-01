@@ -26,7 +26,7 @@ def calDegreeStat(degree, count):
 	#calculate average degree
 	avgDegree = float(sum(degree))/float(len(degree))
 	#calculate the zero degree
-	res = "maxDegr %d\nmostDegr%d\navgDegr %.2f"\
+	res = "maxDegr %d\nmostDegr %d\navgDegr %.2f"\
 	%(mdegree, degree[indMCount], avgDegree)
 	if 0 in degree:
 		res = "%s \nnZeroDegr %d"%(res, count[degree.index(0)])
@@ -38,7 +38,7 @@ def calStatComp(comp, count):
 		return None
 	size = sum(count)
 	mcomp = max(comp)
-	res = "compSize %d\nmaxComp%d\n"\
+	res = "compCount %d\nmaxComp %d\n"\
 	%(size, mcomp)
 	return res
 
@@ -106,7 +106,7 @@ def plotIndeg(dirs, path1, path2, plt, fig, ax):
 		#print y
 		#print thisDir
 		msg = calDegreeStat(x, y)
-		renderScatter(x, y, 'IndDegree distribution', 'indegree', 'Count', \
+		renderScatter(x, y, 'InDegree distribution', 'indegree', 'Count', \
 			thisDir[7:-4], ox-1, oy-1, plt, fig, ax, message=msg)
 		if ox == 3:
 			ox = 1
@@ -204,7 +204,7 @@ def plotPagerank(dirs, path1, path2, plt, fig, ax):
 		#print len(y)
 		#print x
 		#print y
-		render(x, y, 'pagerank', 'pagerank', 'Count', thisDir[7:-4], ox-1,\
+		render(x, y, 'pagerank', 'pagerank', 'Score', thisDir[7:-4], ox-1,\
 		 oy-1, plt, fig, ax, False)
 		if ox == 5:
 			ox = 1
@@ -321,7 +321,7 @@ def plotEigenRev(dirs, path1, path2, plt, fig, ax):
 			#raw_input()
 			for j in range(i+1, 4):
 				xj = vectorR[j]
-				#print xj 
+				#print xj
 				#raw_input()
 				total = calCorr(xi, xj)
 				#print numpy.corrcoef(xi,xj)

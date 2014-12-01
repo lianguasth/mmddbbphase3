@@ -7,7 +7,7 @@ unittest:
 	cd graphminer; make unittest; mv output_* ../output-unittest; mv stdout_* ../output-unittest
 
 plot:
-	mkdir pic
+	mkdir pic; mkdir res
 	#mkdir output-phase1
 	#cd graphminer; make gm1; mv output_* ../output-phase1; mv stdout_* ../output-phase1
 	python iterateOverDir.py output-phase1/ 1
