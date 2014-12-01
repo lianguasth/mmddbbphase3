@@ -909,8 +909,6 @@ def main():
 
         gm_sql_load_table_from_file(db_conn, GM_TABLE, col_fmt, args.input_file, args.delimiter)
 
-        gm_to_undirected(False)
-
         if (not args.undirected):
             gm_to_undirected(False)
 
