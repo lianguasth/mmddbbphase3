@@ -483,4 +483,4 @@ elif "eigvec" in sys.argv[2]:
 
 #plt.show()
 print join("pic", "%s.png"%(sys.argv[2][:-4]))
-fig.savefig(join("pic", "%s.png"%(sys.argv[2])), dpi=200)
+fig.savefig(join("pic", "%s.png"%(sys.argv[2][:-4])), dpi=200)
