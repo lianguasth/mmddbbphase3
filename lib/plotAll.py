@@ -46,6 +46,8 @@ def calStatComp(comp, count):
 def plotDegree(dirs, path1, path2, plt, fig, ax):
 	ox = 1
 	oy = 1
+	fnTotalNode = join("res", "nodeCount.txt")
+	fNode = open(fnTotalNode, 'w+')
 	for thisDir in dirs:
 		lists = {}
 		x = []
@@ -53,13 +55,16 @@ def plotDegree(dirs, path1, path2, plt, fig, ax):
 		print join(path1, thisDir, path2)
 		ff = open(join(path1, thisDir, path2))
 		#name of the png
+		nNode = 0
 		fileName = path2
 		for line in ff.readlines():
 			line = line.strip()
 			words = line.split(",")
 			if len(words) == 2:
 				lists[float(words[0])] = float(words[1])
+				nNode = nNode + float(words[1])
 			#print lists[float(words(0))]
+		fNode.write("%s : %f\n"%(thisDir, nNode))
 		#sort the key
 		od = co.OrderedDict(sorted(lists.items()))
 		for key in od:
@@ -76,6 +81,7 @@ def plotDegree(dirs, path1, path2, plt, fig, ax):
 		else:
 			ox = ox + 1
 		ff.close()
+	fNode.close()
 
 
 def plotIndeg(dirs, path1, path2, plt, fig, ax):
