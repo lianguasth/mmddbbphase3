@@ -14,8 +14,8 @@ for thisFile in dirs:
 		tf = open(join(sys.argv[1], thisFile))
 		line = tf.readline()
 		tf.close()
-		print line
-		print thisFile
+		#print line
+		#print thisFile
 		words = line.split("=")
 		a = float(words[1])
 		name = thisFile.split("_")[-1]
@@ -38,4 +38,3 @@ for line in lines:
 	s = fff[:-4].split(".")[0]
 	#print s
 	print "%s\t%f"%(s, dic[s]/float(nNode))
-

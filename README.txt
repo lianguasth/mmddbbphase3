@@ -1,0 +1,4 @@
+The makefile in this directory includes running graphminer on three phases to get corresponding output files, plotting all the plots in the report using these output files and creating the report.
+Since the original data and output files are too big to be uploaded, we only include unittest answer files in graphminer/data directory, all 22 datasets(in comma separated format) should be put in graphminer/data for the script to work.
+The raw output CSV files and STDOUT files are too big to be uploaded, we include a FIG-bak directory containing all the plots in the report under the report/ directory. In the script, all the plots, once created, will be copied to the empty report/FIG directory. In case of plotting error, please copy all the plots in FIG-bak to FIG. Also, we include a complete report in the root directory.
+For details of the script, please refer to the makefile in the root directory.

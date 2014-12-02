@@ -64,8 +64,8 @@ def gm_save_tables (dest_dir, belief):
     gm_sql_save_table_to_file(db_conn, GM_CON_COMP, "node_id, component_id", \
                                   os.path.join(dest_dir,"conncomp.csv"), ",");
 
-    #gm_sql_save_table_to_file(db_conn, GM_RADIUS, "node_id, radius", \
-    #                             os.path.join(dest_dir,"radius.csv"), ",");
+    gm_sql_save_table_to_file(db_conn, GM_RADIUS, "node_id, radius", \
+                                 os.path.join(dest_dir,"radius.csv"), ",");
 
     if (belief):
          gm_sql_save_table_to_file(db_conn, GM_BELIEF, "node_id, belief", \

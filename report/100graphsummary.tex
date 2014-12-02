@@ -1,8 +1,9 @@
 \subsection{Datasets}
 \par We studied 20 datasets, including 8 undirected graphs and 12 directed graphs. The details of the graphs are shown below.
 
-\begin{table}[h]
+\begin{table}[H]
 \fontsize{8}{10}\selectfont
+\begin{center}
 \begin{tabular}{llllll}
 Dataset        & file                         & Category      & Directed & Sampled & Description                            \\ \hline
 Skitter        & as-skitter.ungraph-75000.txt & Physical      & N        & Y       & autonomous systems on web              \\
@@ -26,6 +27,8 @@ Digg           & soc-digg.txt                 & Social        & Y        & N    
 Flickr         & soc-flickr-75000.txt         & Social        & Y        & Y       & directed friendship                    \\
 Pokec          & soc-pokec-75000.txt          & Social        & Y        & Y       & directed friendship                    \\ \hline
 \end{tabular}
+\caption{Dataset details}
+\end{center}
 \end{table}
 
 In the following sections, we present our analysis on common features and distinctive patterns among these 20 dataset for various graph algorithms. Specifically, these algorithms include degree distributions, PageRank, weakly connected components, K-Core connected components with k=5, eigendecomposition and triangle count approximated from eigenvalues.
@@ -38,7 +41,7 @@ In the following sections, we present our analysis on common features and distin
 \end{center}
 \end{figure}
 
-\par Degree distributions of most of the graphs follow the power law(see Figure 4 above). However, for some of the graphs, counts of the smallest 10 degrees exhibit different patterns from power law. These graphs are discussed below.
+\par Degree distributions of most of the graphs follow the power law(see Figure 11 above). However, for some of the graphs, counts of the smallest 10 degrees exhibit different patterns from power law. These graphs are discussed below.
 
 \begin{itemize}
 \item \textbf{Hep-Ph} The degree which has most corresponding nodes is 4 instead of 1, implying that most publications in this section have more than one citation relationship with others. Counts of nodes with degree more than 4 follow the power law.
@@ -58,7 +61,7 @@ In the following sections, we present our analysis on common features and distin
 \end{center}
 \end{figure}
 
-\par Indegree distributions of most of the directed graphs follow the power law(see Figure 5 above). But for 2 of the 12 directed graphs, not the whole indegree distribution obeys the power law. These graphs are discussed below.
+\par Indegree distributions of most of the directed graphs follow the power law(see Figure 12 above). But for 2 of the 12 directed graphs, not the whole indegree distribution obeys the power law. These graphs are discussed below.
 
 \begin{itemize}
 \item \textbf{Astro-Ph} The indegree which has most corresponding nodes is 2 instead of 1, indicating that most publications are cited by 2 publications.
@@ -79,7 +82,7 @@ There are also some other interesting facts observed from the indegree distribut
 \end{center}
 \end{figure}
 
-\par Outdegree distributions of most of the directed graphs follow the power law(see Figure 6 above). But for 5 of the 12 directed graphs, not the whole outdegree distribution obeys the power law. These graphs are discussed below.
+\par Outdegree distributions of most of the directed graphs follow the power law(see Figure 13 above). But for 5 of the 12 directed graphs, not the whole outdegree distribution obeys the power law. These graphs are discussed below.
 
 \begin{itemize}
 \item \textbf{Astro-Ph} The outdegree which has most corresponding nodes is 2 instead of 1, indicating that most publications cite 2 publications.
@@ -89,7 +92,7 @@ There are also some other interesting facts observed from the indegree distribut
 \item \textbf{Spanish book} The outdegree which has most corresponding nodes is 2, indicating that most words in this book precedes two words(possibly itself). From the power law observed in the indegree and outdegree distribution of word adjacency in this book, it is clear that most words are used with only a few words together and few words are used very frequently with other words. This conforms to the nature of many languages.
 \end{itemize}
 
-Other interesting discoveries include:
+\par Other interesting discoveries include:
 \begin{enumerate}
 \item In two of the social network datasets, \textbf{Flickr} and \textbf{Pokec}, nodes with zero outdegree is overwhelming, indicating that a substantial portion of users didn't actively make friends with other users, which means inactive users are quite common in social networks. In contrast, we spot in \textbf{Flickr} that one user has made about 2000 friends, more than twice of the second most, indicating that there is one extremely heavy user. Actually, there is a similar user in \textbf{Pokec} as well, but not so heavy. From these observations, we see that the activeness distribution caused by the nature of social network is the underlying reason of power law observed in both indegree and outdegree distribution.
 \item Among three citation graphs, \textbf{Cora}, \textbf{Hep-Ph} and \textbf{Hep-Th}, most nodes in\textbf{Cora} has an outdegree of 1, much more than the nodes with zero outdegree, whereas in other two datasets the number of nodes with outdegree of 1 is close to the number of nodes with zero degree. This indicates that the research in Cora section is relatively more focused on established topics, while there are relatively more new topics in other two sections.
@@ -103,7 +106,7 @@ Other interesting discoveries include:
 \end{center}
 \end{figure}
 
-
+\par We plot the PageRank score versus the PageRank rank of each node for each graph(see Figure 14 above). We observe power law in all the graphs.
 
 \subsection{Weakly connected components}
 \begin{figure}[H]
@@ -113,7 +116,7 @@ Other interesting discoveries include:
 \end{center}
 \end{figure}
 
-We plot the size of connected component and count of components with that size in Figure 8. From the figure we can see 5 datasets are fully connected. For the remaining datasets, all of them have a very large component relative to the sizes of the other components. Among these datasets, most of them exhibits a power relation in the count and component size for connected components with small sizes. But some graphs exhibit a different relationship, as discussed below.
+\par We plot the size of connected component and count of components with that size for each graph(see Figure 15 above). From the figure we can see 5 datasets are fully connected. For the remaining datasets, all of them have a very large component relative to the sizes of the other components. Among these datasets, most of them exhibits a power relation in the count and component size for connected components with small sizes. But some graphs exhibit a different relationship, as discussed below.
 
 \begin{itemize}
 \item Some sampled datasets, such as \textbf{Skitter}, \textbf{Amazon}, \textbf{DBLP} and \textbf{Flickr}, count of the components with small components size increases with the component size, instead of decreasing.
@@ -130,7 +133,25 @@ We plot the size of connected component and count of components with that size i
 \end{center}
 \end{figure}
 
-\subsection{Eigendecomposition}
+\par We plot the size of 5-core connected components and count of components with that size for each graph(see Figure 16 above). From the figure, we observer that 11 of 20 graphs have only one 5-core connected components, meaning all 5-core nodes are fully connected. Besides, \textbf{Youtube} and \textbf{Pokec} dataset does not have 5-core nodes at all. For the remaining 7 graphs, they share a common feature, all of them have one or two very large component relative to the sizes of other components. Among these 7 graphs, counts of small component size in \textbf{Amazon}, \textbf{DBLP}, \textbf{Enron} and \textbf{Astro-Ph} follow the power law. Power law is not so obvious in \textbf{Skitter}, which could be caused by sampled data.
+
+\par We also find some dataset specific facts:
+\begin{itemize}
+\item \textbf{Amazon} There are two very large 5-core components which are close in size. They are mostly likely to be two category of products where complement goods are common, making nodes in the components have high degree.
+\item \textbf{Slashdot, Flickr} These two graphs almost have fully connected 5-core nodes, \textbf{Slashdot} only have 3 components with size 2, and the giant 5-core connected component includes more than half of the nodes in the graph, indicating the popularity of friend/foe marking feature. \textbf{Flickr} only have 2 components with size 4, but the size of the giant 5-core connected component is not comparable with the size of the graph, indicating that the most interactive group of users has a small size.
+\end{itemize}
+
+\subsection{Eigenvector}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{FIG/eigvec.png}
+\caption{Eigenvector of 20 graphs}
+\end{center}
+\end{figure}
+
+\par For eigen vector plot(see Figure 17 above), we use 2 least correlated eigen vector in the top 3 eigen vector(the absulote value of eigen values that are top 3 largest). We could see that some graph clearly taken on eigenSpoke pattern.
+\par Eigen vector could be used to find closely connected nodes like Bipartite-graph and cliques. From graph we infer that one of the important causes for a spokes pattern is the presence of a large number of tightly knit communities in the graph(Cited from the eigenSpoke paper from Ukang).We could see that \textbf{EU institution}, \textbf{Skitter}, \textbf{Hep-Th}, \textbf{Digg}, \textbf{Youtube}, \textbf{Flickr} has clear eigenspoke pattern, indicating that they have clear comunities structures. Take \textbf{Youtube} as an example, many users form disconnected friend circle. Some users like korea soap opera may never like game series like dota and legend of leagues. On other graph like \textbf{JDK}, we could not see the clear spoke structure, this might because that jdkdependency has a unique-root tree structure that makes the whole graph connected. Other graphs like \textbf{Protein}, nodes are completely scattered on the plane, indicating that no clear community structure is in the graph.
+
 \subsection{Triangle count}
 \begin{figure}[H]
 \begin{center}
@@ -138,3 +159,40 @@ We plot the size of connected component and count of components with that size i
 \caption{Count of triangle of 20 graphs, approximated from eigenvalues}
 \end{center}
 \end{figure}
+
+\begin{table}[H]
+\fontsize{8}{10}\selectfont
+\begin{center}
+\begin{tabular}{ll}
+Dataset          & triangle count/number of nodes*100 \\ \hline
+Caida            & 1.129318                    \\
+Skitter          & 0.042026                    \\
+Protein          & 0.013295                    \\
+Astro-Ph         & 55.977348                   \\
+Cora             & 0.138330                    \\
+Hep-Ph           & 1.757036                    \\
+Hep-Th           & 6.829560                    \\
+Amazon           & 0.001137                    \\
+DBLP             & 0.011875                    \\
+Enron            & 56.279662                   \\
+EU institution   & 1.393494                    \\
+Gnutella         & 0.004892                    \\
+Digg             & 0.171094                    \\
+Flickr           & 0.018077                    \\
+Hamsterster      & 8.343715                    \\
+Pokec            & 0.000353                    \\
+Slashdot         & 3.338155                    \\
+Youtube          & 0.001574                    \\
+JDK              & 23.442361                   \\
+text-spanishbook & 15.190374                   \\ \hline
+\end{tabular}
+\caption{Triangle count against number of nodes}
+\end{center}
+\end{table}
+
+We plot the triangle count as histogram and report the ratio of triangle number versus node number for each graph(see Figure 18 and Table 53 above). The huge number of triangles in \textbf{Enron} and \textbf{Astro-Ph} indicate that they are highly connected graphs. From the ratio of number of triangles against number of nodes, we can identify that \textbf{Enron}, \textbf{Astro-Ph} has a percentage of more than 50\%.We can infer some facts about these two datasets:
+
+\begin{itemize}
+\item \textbf{Enron} A large portion of employees of Enron collaborates via email in groups with three or more members.
+\item \textbf{Astro-Ph} Two authors who have both coauthored with another author usually have coauthored. A large portion of publications in this section are coauthored by three or more authors.
+\end{itemize}
