@@ -4,14 +4,14 @@ from os.path import isfile, join
 import sys
 
 dic = {}
-dirs = [ f for f in listdir(".") if  isfile(join(".",f)) ]
+dirs = [ f for f in listdir(sys.argv[1]) if  isfile(join(sys.argv[1],f)) ]
 #print dirs
 for thisFile in dirs:
 #	print thisFile
 	if not "triCount" in thisFile:
 		pass
 	else:
-		tf = open(join(".", thisFile))
+		tf = open(join(sys.argv[1], thisFile))
 		line = tf.readline()
 		tf.close()
 		words = line.split("=")
@@ -20,7 +20,7 @@ for thisFile in dirs:
 		dic[name] = a
 #print dic
 
-fnodeCount = open("./nodeCount.txt")
+fnodeCount = open(join(sys.argv[1],"nodeCount.txt"))
 lines = fnodeCount.readlines();
 fnodeCount.close()
 

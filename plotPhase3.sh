@@ -13,6 +13,7 @@ do
 	fi
 done
 plot $1
+python lib/calP.py res > res/triCountVSNodeNumber.txt
 }
 
 function main(){
