@@ -117,8 +117,9 @@ We plot the size of connected component and count of components with that size i
 
 \begin{itemize}
 \item Some sampled datasets, such as \textbf{Skitter}, \textbf{Amazon}, \textbf{DBLP} and \textbf{Flickr}, count of the components with small components size increases with the component size, instead of decreasing.
-\item \textbf{EU Institution} Component size 
-\item \textbf{Hep-Th} 
+\item \textbf{EU Institution} Count of components with only one node is far fewer than count of components with two nodes. One possible explanation of this distribution is that these nodes are spammers and since the spam emails they sent have been removed from the dataset, they are isolated from other nodes(users). As spammers are usually a small fraction of all the users, it explains why there is few components with only one node.
+\item \textbf{Hep-Th, Astro-Ph} These two graphs share a common feature, there is only one component with only one node, far fewer than components of other small size. This is strange because these two graphs have no nodes with zero degree according to degree distribution. After checking the edge data, we found that these two graphs both have a node that have only one edge from it to itself. This can be explained in \textbf{Hep-Th} dataset since one publication can cite itself, however, for \textbf{Astro-Ph}, it may be an incorrect entry.
+\item \textbf{Digg} Count of components with only one node is fewer than count of components with two nodes, indicating that few users haven't replied or received replies from other users, thus inactive 
 \end{itemize}
 
 \subsection{K-Core connected components with k=5}

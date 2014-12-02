@@ -62,9 +62,9 @@ def plotDegree(dirs, path1, path2, plt, fig, ax):
 			words = line.split(",")
 			if len(words) == 2:
 				lists[float(words[0])] = float(words[1])
-				nNode = nNode + float(words[1])
+				nNode = nNode + int(words[1])
 			#print lists[float(words(0))]
-		fNode.write("%s : %f\n"%(thisDir, nNode))
+		fNode.write("%s : %d\n"%(thisDir, nNode))
 		#sort the key
 		od = co.OrderedDict(sorted(lists.items()))
 		for key in od:
