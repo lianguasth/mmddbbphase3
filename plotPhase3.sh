@@ -13,7 +13,7 @@ do
 	fi
 done
 plot $1
-python lib/calP.py res > res/triCountVSNodeNumber.txt
+python lib/calP.py res > res/nTriVSnNode
 }
 
 function main(){
@@ -38,6 +38,7 @@ python ./lib/plotAll.py $1 outdegreedist.csv
 python ./lib/plotAll.py res triangle
 #draw eigen vector
 python ./lib/plotAll.py $1 eigvec.csv
+echo "job done"
 }
 
 main $1

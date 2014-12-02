@@ -14,6 +14,8 @@ for thisFile in dirs:
 		tf = open(join(sys.argv[1], thisFile))
 		line = tf.readline()
 		tf.close()
+		print line
+		print thisFile
 		words = line.split("=")
 		a = float(words[1])
 		name = thisFile.split("_")[-1]
