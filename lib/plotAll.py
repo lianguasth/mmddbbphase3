@@ -312,20 +312,23 @@ def plotEigenRev(dirs, path1, path2, plt, fig, ax):
 				tcol = int(words[1])
 				tval = float(words[2])
 				vectors.append(tval)
-		num = int(len(vectors)/4)
+		#num = int(len(vectors)/4)
+		num = int(len(vectors)/3)
 		vectorR = []
-		for i in range(4):
+		for i in range(3):
 			t = []
 			for j in range(num):
 				t.append(vectors[i*num + j])
 			vectorR.append(t)
 		minTotal = 100000000
 		#print len(vectors)
-		for i in range(0,3):
+		#for i in range(0,3):
+		for i in range(0,2):
 			xi = vectorR[i]
 			#print xi
 			#raw_input()
-			for j in range(i+1, 4):
+			#for j in range(i+1, 4):
+			for j in range(i+1, 3):
 				xj = vectorR[j]
 				#print xj
 				#raw_input()
