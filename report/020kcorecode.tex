@@ -35,7 +35,8 @@ def gm_kcore(k):
         #showTable(cur, degreeTableName)
     tmpNode = 'tmpNode'
     gm_sql_table_drop_create(db_conn, tmpNode, "node_id integer")
-    cmd = "INSERT INTO {0} SELECT DISTINCT src_id FROM {1}".format(tmpNode, tableName)    
+    cmd = "INSERT INTO {0} SELECT DISTINCT src_id FROM {1}"
+        .format(tmpNode, tableName)    
     cur.execute(cmd)
     getTableCount(cur, 'tmpNode')
     db_conn.commit()

@@ -3,28 +3,28 @@
 
 \begin{table}[h]
 \fontsize{8}{10}\selectfont
-\begin{tabular}{lllll}
-Dataset        & File                         & Category      & Directed & Description                            \\ \hline
-Skitter        & as-skitter.ungraph-75000.txt & Physical      & N        & autonomous systems on web              \\
-Caida          & as-Caida.undir.txt           & Physical      & N        & autonomous systems on web              \\
-Enron          & email-Enron.ungraph.txt      & Communication & N        & email records between employees        \\
-EU institution & email-EuAll.txt              & Communication & Y        & email records between employees        \\
-Amazon         & com-amazon.ungraph-75000.txt & Co-occurence  & N        & bought X also bought Y                 \\
-DBLP           & com-dblp.ungraph-75000.txt   & Coauthorship  & N        & coauthorship relationship              \\
-Astro-Ph       & ca-AstroPh.txt               & Coauthorship  & Y        & coauthorship relationship              \\
-Protein        & bio-protein-undir.txt        & Metabolic     & N        & metabolic interaction between proteins \\
-JDK            & soft-jdkdependency.txt       & Software      & Y        & dependency between Java classes        \\
-Spanish book   & text-spanishbook.txt         & Lexical       & Y        & word following relationship            \\
-Gnutella       & p2p-Gnutella31.txt           & Computer      & Y        & connection between hosts               \\
-Hep-Ph         & cit-HepPh.txt                & Citation      & Y        & citation relationship                  \\
-Hep-Th         & cit-HepTh.txt                & Citation      & Y        & citation relationship                  \\
-Cora           & cit-Cora.txt                 & Citation      & Y        & citation relationship                  \\
-Hamsterster    & soc-hamsterster.undir.txt    & Social        & N        & social network friendship              \\
-Youtube        & soc-Youtube-75000.undir.txt  & Social        & N        & social network friendship              \\
-Slashdot       & soc-Slashdot0811-75000.txt   & Social        & Y        & directed friend/foe relationship       \\
-Digg           & soc-digg.txt                 & Social        & Y        & reply from one user to another         \\
-Flickr         & soc-flickr-75000.txt         & Social        & Y        & directed friendship                    \\
-Pokec          & soc-pokec-75000.txt          & Social        & Y        & directed friendship                                       \\ \hline
+\begin{tabular}{llllll}
+Dataset        & file                         & Category      & Directed & Sampled & Description                            \\ \hline
+Skitter        & as-skitter.ungraph-75000.txt & Physical      & N        & Y       & autonomous systems on web              \\
+Caida          & as-Caida.undir.txt           & Physical      & N        & N       & autonomous systems on web              \\
+Enron          & email-Enron.ungraph.txt      & Communication & N        & N       & email records between employees        \\
+EU institution & email-EuAll.txt              & Communication & Y        & N       & email records between employees        \\
+Amazon         & com-amazon.ungraph-75000.txt & Co-occurence  & N        & Y       & bought X also bought Y                 \\
+DBLP           & com-dblp.ungraph-75000.txt   & Coauthorship  & N        & Y       & coauthorship relationship              \\
+Astro-ph       & ca-AstroPh.txt               & Coauthorship  & Y        & N       & coauthorship relationship              \\
+Protein        & bio-protein-undir.txt        & Metabolic     & N        & N       & metabolic interaction between proteins \\
+JDK            & soft-jdkdependency.txt       & Software      & Y        & N       & dependency between Java classes        \\
+Spanish book   & text-spanishbook.txt         & Lexical       & Y        & N       & word following relationship            \\
+Gnutella       & p2p-Gnutella31.txt           & Computer      & Y        & N       & connection between hosts               \\
+Hep-Ph         & cit-HepPh.txt                & Citation      & Y        & N       & citation relationship                  \\
+Hep-Th         & cit-HepTh.txt                & Citation      & Y        & N       & citation relationship                  \\
+Cora           & cit-Cora.txt                 & Citation      & Y        & N       & citation relationship                  \\
+Hamsterster    & soc-hamsterster.undir.txt    & Social        & N        & N       & social network friendship              \\
+Youtube        & soc-Youtube-75000.undir.txt  & Social        & N        & Y       & social network friendship              \\
+Slashdot       & soc-Slashdot0811-75000.txt   & Social        & Y        & Y       & directed friend/foe relationship       \\
+Digg           & soc-digg.txt                 & Social        & Y        & N       & reply from one user to another         \\
+Flickr         & soc-flickr-75000.txt         & Social        & Y        & Y       & directed friendship                    \\
+Pokec          & soc-pokec-75000.txt          & Social        & Y        & Y       & directed friendship                    \\ \hline
 \end{tabular}
 \end{table}
 
@@ -119,7 +119,7 @@ We plot the size of connected component and count of components with that size i
 \item Some sampled datasets, such as \textbf{Skitter}, \textbf{Amazon}, \textbf{DBLP} and \textbf{Flickr}, count of the components with small components size increases with the component size, instead of decreasing.
 \item \textbf{EU Institution} Count of components with only one node is far fewer than count of components with two nodes. One possible explanation of this distribution is that these nodes are spammers and since the spam emails they sent have been removed from the dataset, they are isolated from other nodes(users). As spammers are usually a small fraction of all the users, it explains why there is few components with only one node.
 \item \textbf{Hep-Th, Astro-Ph} These two graphs share a common feature, there is only one component with only one node, far fewer than components of other small size. This is strange because these two graphs have no nodes with zero degree according to degree distribution. After checking the edge data, we found that these two graphs both have a node that have only one edge from it to itself. This can be explained in \textbf{Hep-Th} dataset since one publication can cite itself, however, for \textbf{Astro-Ph}, it may be an incorrect entry.
-\item \textbf{Digg} Count of components with only one node is fewer than count of components with two nodes, indicating that few users haven't replied or received replies from other users, thus inactive 
+\item \textbf{Digg} Count of components with only one node is fewer than count of components with two nodes, indicating that few users haven't replied or received replies from other users. We can infer that most users in Digg tend to interact with other users.
 \end{itemize}
 
 \subsection{K-Core connected components with k=5}

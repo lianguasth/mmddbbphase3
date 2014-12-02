@@ -89,8 +89,8 @@ def gm_node_degrees (shouldDrop = False):
     # If the graph is undirected, all the degree values will be the same
     print "Computing Node degrees..."
     if shouldDrop:
-    	cmd = "DROP TABLE {0} CASCADE".format(GM_NODE_DEGREES)
-    	cur.execute(cmd)
+        cmd = "DROP TABLE {0} CASCADE".format(GM_NODE_DEGREES)
+        cur.execute(cmd)
 
     db_conn.commit()
     gm_sql_table_drop_create(db_conn, GM_NODE_DEGREES, "node_id integer, \
@@ -778,45 +778,45 @@ def gm_eigen_triangle_count():
     cur.close()
 
 def execute(cur, cmd):
-	cur.execute(cmd)
-	return cur.fetchall()
+    cur.execute(cmd)
+    return cur.fetchall()
 
 def showTable(cur, tableName):
-	s = 'select * from {0}'.format(tableName)
-	cur.execute(s)
-	print cur.fetchall()
+    s = 'select * from {0}'.format(tableName)
+    cur.execute(s)
+    print cur.fetchall()
 
 def getTableCount(cur, tableName):
-	s = 'select count(*) from {0}'.format(tableName)
-	cur.execute(s)
-	t = cur.fetchone()
-	print 'the count of table should be :{0}'.format(t[0])
-	return t[0]
+    s = 'select count(*) from {0}'.format(tableName)
+    cur.execute(s)
+    t = cur.fetchone()
+    print 'the count of table should be :{0}'.format(t[0])
+    return t[0]
 
 #Task 8
 def gm_kcore(k):
-	degreeTableName = GM_NODE_DEGREES
-	tableName = GM_TABLE_UNDIRECT
-	#connect to an existing database
-	cur = db_conn.cursor()
-	cntBefore = -1
-	#loop deleting the edges
-	while True:
-		#see the degree
-		cmd = "SELECT count(*) from {0}".format(tableName)
-		t = execute(cur, cmd)
-		cnt = t[0][0]
-		if cnt == cntBefore or cnt == 0:
-			#if cnt == 0:
-			#	print 'haha!'
-			print 'quit!'
-			break
-		else:
-			print cnt
-			cntBefore = cnt
-		#a = getTableCount(cur, tableName)
-		gm_node_degrees(True)
-		tStr = "DROP VIEW IF EXISTS id;"
+    degreeTableName = GM_NODE_DEGREES
+    tableName = GM_TABLE_UNDIRECT
+    #connect to an existing database
+    cur = db_conn.cursor()
+    cntBefore = -1
+    #loop deleting the edges
+    while True:
+        #see the degree
+        cmd = "SELECT count(*) from {0}".format(tableName)
+        t = execute(cur, cmd)
+        cnt = t[0][0]
+        if cnt == cntBefore or cnt == 0:
+            #if cnt == 0:
+            #    print 'haha!'
+            print 'quit!'
+            break
+        else:
+            print cnt
+            cntBefore = cnt
+        #a = getTableCount(cur, tableName)
+        gm_node_degrees(True)
+        tStr = "DROP VIEW IF EXISTS id;"
         stra = "{2} CREATE TEMP VIEW id AS SELECT node_id FROM {0} WHERE in_degree < {1}".format(degreeTableName, k, tStr)
         cmd = "{1}; DELETE FROM {0} WHERE src_id in (select * from id) or dst_id in (select * from id);".format(tableName, stra)
         cur.execute(cmd)
@@ -825,13 +825,13 @@ def gm_kcore(k):
         db_conn.commit()
         #showTable(cur, tableName)
         #showTable(cur, degreeTableName)
-	tmpNode = 'tmpNode'
-	gm_sql_table_drop_create(db_conn, tmpNode, "node_id integer")
-	cmd = "INSERT INTO {0} SELECT DISTINCT src_id FROM {1}".format(tmpNode, tableName)
-	cur.execute(cmd)
-	getTableCount(cur, 'tmpNode')
-	db_conn.commit()
-	cur.close()
+    tmpNode = 'tmpNode'
+    gm_sql_table_drop_create(db_conn, tmpNode, "node_id integer")
+    cmd = "INSERT INTO {0} SELECT DISTINCT src_id FROM {1}".format(tmpNode, tableName)
+    cur.execute(cmd)
+    getTableCount(cur, 'tmpNode')
+    db_conn.commit()
+    cur.close()
 
 # Innovative Task : Anomaly Detection for unidrected graphs
 def gm_anomaly_detection():
@@ -860,7 +860,6 @@ def gm_anomaly_detection():
 def main():
     global db_conn
     global GM_TABLE
-    global GM_TABLE_UNDIRECT
      # Command Line processing
     parser = argparse.ArgumentParser(description="Graph Miner Using SQL v1.0")
     parser.add_argument ('--file', dest='input_file', type=str, required=True,
@@ -909,12 +908,10 @@ def main():
 
         gm_sql_load_table_from_file(db_conn, GM_TABLE, col_fmt, args.input_file, args.delimiter)
 
-        if (not args.undirected):
-            gm_to_undirected(False)
+        gm_to_undirected(False)
 
         if (args.undirected):
-            #GM_TABLE = GM_TABLE_UNDIRECT
-            GM_TABLE_UNDIRECT = GM_TABLE
+            GM_TABLE = GM_TABLE_UNDIRECT
 
         # Create table of node ids
         gm_create_node_table()
